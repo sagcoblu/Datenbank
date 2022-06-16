@@ -1,0 +1,12 @@
+main > .container {
+    padding: 60px 15px 0;
+  }
+  
+  main > .container2 {
+      padding-top: 60px;
+  }
+  
+  #ptbody tr {
+      cursor: pointer;
+  }
+  

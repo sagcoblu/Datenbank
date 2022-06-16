@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Neuro Onko</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+</head>
+<body>
+    <main class="flex-shrink-0">
+        <div class="container">
+            <div class="row mb-1">
+                <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="pdatum">Pathologiedatum:</label>
+                <div class="col-sm-9">
+                    <input type="date" class="form-control  form-control-sm" aria-label="pdatum" id="pdatum" name="pdatum" required="">
+                    <div class="invalid-feedback"> Bitte ein Datum wählen / eintragen. </div>
+                </div>
+            </div>
+            <div class="row mb-1">
+                <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="enummer">Einsendenummer:</label>
+                <div class="col-sm-9">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-text" id="pdate">H-</span>
+                        <input type="text" class="form-control form-control-sm" aria-label="enummer" id="enummer" name="enummer">
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-1 d-flex align-items-center">
+                <label class="radio control-label col-sm-3 col-form-label col-form-label-sm">Massgebliche Histologie:</label>
+                <div class="col-sm-9">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="mhisto" id="mhistounbekannt" value="0" checked="">
+                        <label class="form-check-label" for="mhistounbekannt">unbekannt</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="mhisto" id="mhistonein" value="1">
+                        <label class="form-check-label" for="mhistonein">nein</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="mhisto" id="mhistoja" value="2">
+                        <label class="form-check-label" for="mhistoja">ja</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-1">
+                <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="probenart">Probenart:</label>
+                <div class="col-sm-9">
+                    <select name="probenart" id="probenart" class="form-select form-select-sm" aria-label="Probenart">
+                        <option selected="" value="0">Resektat </option>
+                        <option value="1">Biopsie </option>
+                        <option value="2">Zytologie </option>
+                        <option value="3">Klinische Einschätzung (keine Probe) </option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-1 d-flex align-items-center">
+                <label class="radio control-label col-sm-3 col-form-label col-form-label-sm">Transformation:</label>
+                <div class="col-sm-9">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="transformation" id="transformationunbekannt" value="0" checked="">
+                        <label class="form-check-label" for="transformationunbekannt">unbekannt</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="transformation" id="transformationnein" value="1">
+                        <label class="form-check-label" for="transformationnein">nein</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="transformation" id="transformationja" value="2">
+                        <label class="form-check-label" for="transformationja">ja</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-1">
+                <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="probenart">Befundet von:</label>
+                <div class="col-sm-9">
+                    <select name="befundetvon" id="befundetvon" class="form-select form-select-sm" aria-label="Befundet">
+                        <option value="0">unbekannt </option>
+                        <option value="1">Dr. Ágnes Csanádi </option>
+                        <option value="2">Dr. med. Uta Diergardt </option>
+                        <option value="3">Dr. med. Peter Fritz </option>
+                        <option value="5">Dr. med. Jörg Kalla </option>
+                        <option value="6">Prof. Dr. med. Friedrich-Wilhelm Kolkmann </option>
+                        <option value="7">Dr. medic. Ana-Maria Luchian </option>
+                        <option value="8">Dr. med. Alexei Pogrebniak </option>
+                        <option value="9">Dr. med. Barbara Presztoczki </option>
+                        <option value="10">U. Riester </option>
+                        <option value="11">Dr. med. Michaela Rockenstiehl </option>
+                        <option value="12">Dr. med. M. Seidl </option>
+                        <option value="13">Dr. med. Szilvia Takács </option>
+                        <option value="14">Dr. med. Peter Vierling </option>
+                        <option value="14">Prof. Dr. med. Axel von Herbay </option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-1">
+                <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="probenart">Referenzpathologie:</label>
+                <div class="col-sm-9">
+                    <select name="rpathologie" id="rpathologie" class="form-select form-select-sm" aria-label="Referenzpathologie">
+                        <option value="0" selected="">nicht durchgeführt </option>
+                        <option value="1">unbekannt </option>
+                        <option value="2">Tübingen </option>
+                        <option value="3">Freiburg </option>
+                        <option value="5">Düsseldorf </option>
+                        <option value="6">Hamburg </option>
+                        <option value="7">Sonstige </option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="row mb-1">
+                <span style="font-weight:bold">Molekulargenetik:</span>
+            </div>
+        </div>
+        <div class="container" id="histo">
+            <div class="row mb-1">
+                <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="IDH1">IDH1:</label>
+                <div class="col-sm-9">
+                    <select name="IDH1" id="IDH1" class="form-select form-select-sm" aria-label="IDH1">
+                        <option value="0" selected="">unbekannt</option>
+                        <option value="1">Wildtyp </option>
+                        <option value="2">mutiert </option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-1">
+                <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="IDH2">IDH2:</label>
+                <div class="col-sm-9">
+                    <select name="IDH2" id="IDH2" class="form-select form-select-sm" aria-label="IDH2">
+                        <option value="0" selected="">unbekannt </option>
+                        <option value="1">Wildtyp </option>
+                        <option value="2">mutiert </option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-1">
+                <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="MGMT">MGMT:</label>
+                <div class="col-sm-9">
+                    <select name="MGMT" id="MGMT" class="form-select form-select-sm" aria-label="MGMT">
+                        <option value="0" selected="">unbekannt </option>
+                        <option value="1">unmethyliert </option>
+                        <option value="2">grenzwertig methyliert </option>
+                        <option value="3">methyliert </option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-1">
+                <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="1p19q">1p19q:</label>
+                <div class="col-sm-9">
+                    <select name="1p19q" id="1p19q" class="form-select form-select-sm" aria-label="1p19q">
+                        <option value="0" selected="">unbekannt </option>
+                        <option value="1">1p/19q kodeletiert </option>
+                        <option value="2">1p/19q intakt </option>
+                        <option value="3">1p LOH </option>
+                        <option value="4">19q LOH </option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-1">
+                <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="ATRX">ATRX:</label>
+                <div class="col-sm-9">
+                    <select name="ATRX" id="ATRX" class="form-select form-select-sm" aria-label="ATRX">
+                        <option value="0" selected="">unbekannt </option>
+                        <option value="1">Nukleäres ATRX erhalten (kein Verlust) </option>
+                        <option value="2">Nukleäres ATRX verloren </option>
+                        <option value="3">Nukleäres ATRX zumeist erhalten</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-1">
+                <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="TERT">TERT:</label>
+                <div class="col-sm-9">
+                    <select name="TERT" id="TERT" class="form-select form-select-sm" aria-label="TERT">
+                        <option value="0" selected="">unbekannt</option>
+                        <option value="1">Wildtyp </option>
+                        <option value="2">mutiert </option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-1">
+                <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="H3F3A">H3F3A:</label>
+                <div class="col-sm-9">
+                    <select name="H3F3A" id="H3F3A" class="form-select form-select-sm" aria-label="H3F3A">
+                        <option value="0" selected="">unbekannt</option>
+                        <option value="1">Wildtyp </option>
+                        <option value="2">mutiert </option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-1">
+                <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="H3K27M">H3K27M:</label>
+                <div class="col-sm-9">
+                    <select name="H3K27M" id="H3K27M" class="form-select form-select-sm" aria-label="H3K27M">
+                        <option value="0" selected="">unbekannt</option>
+                        <option value="1">Wildtyp </option>
+                        <option value="2">mutiert </option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="row mb-1">
+                <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="Details">Details:</label>
+                <div class="col-sm-9">
+                    <textarea name="details" maxlength="600" rows="7" class="form-control form-control-sm" id="details" style="resize: none;" onfocus="this.placeholder = ''" placeholder="Genauere Beschreibung oder Bemerkung zum Pathologiebefund" onblur="this.placeholder = 'Genauere Beschreibung oder Bemerkung zum Pathologiebefund'"></textarea>
+                </div>
+            </div>
+        </div>
+    </main>   
+</body>
+</html> 
+
+
+<script src="/js/jquery-3.6.0.min.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+<script src="/js/form-validation.js"></script>
+
+<script>
+$(document).ready(function() {
+    $("#pdatum").change (function() {
+        date1 = $("#pdatum").val();
+        date2 = new Date(date1);
+        $('#pdate').text("H-" + date2.getFullYear() + "-");   
+    });
+});
+</script>

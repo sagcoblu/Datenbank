@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+<html lang="de" class="h-100">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Neuro Onko Landing Page</title>
+   
+      <link href="/css/bootstrap.min.css" rel="stylesheet">
+      <link href="/css/main.css" rel="stylesheet">
+   </head>
+
+   <body class="d-flex flex-column h-100">
+    <header>
+        <nav class="navbar navbar-expand-md bg-light fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Neuro Onko DB</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".dual-collapse2" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse w-100 order-1 order-md-0 dual-collapse2" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link 
+                              " href="index.php" >Übersicht
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="new.php">Neuer Datensatz</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="stats.php">Statistik</a>
+                </li>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse order-2 dual-collapse2" id="navbarSupportedContentright">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+                            <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+                            <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+                        </svg>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-sm-end" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="admin.php">Admin</a></li>
+                        <li><a class="dropdown-item" href="chpw.php">Change password</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav></header>
+<main class="flex-shrink-0">
+<div class="container">
+<form class="row row-cols-2 g-3 px-4 align-items-top mt-1 form-control-sm needs-validation" novalidate action="php/api.php?newp" method="POST" name="pat" id="pat">
+    <div class="col">
+       <div class="row mb-1">
+       <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="ORBIS ID">ORBIS ID:</label>
+       <div class="col-sm-9">
+    <input type="number" class="form-control form-control-sm" aria-label="ORBIS ID" id="ORBISID" name="kisid" placeholder="PID" required>
+    <div class="invalid-feedback">
+		ORBIS ID ist ein Pflichtfeld.
+	</div>
+    </div>
+  </div>
+  <div class="row mb-1">
+  <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="Nachname">Nachname:</label>
+  <div class="col-sm-9">
+    <input type="text" class="form-control form-control-sm" aria-label="Nachname" id="Nachname" name="name" required>
+    <div class="invalid-feedback">
+		Bitte einen gültigen Nachname eintragen.
+	</div>
+  </div>
+  </div>
+  <div class="row mb-1">
+  <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="Vorname">Vorname:</label>
+  <div class="col-sm-9">
+    <input type="text" class="form-control form-control-sm" aria-label="Vorname" id="Vorname" name="vname" required>
+    <div class="invalid-feedback">
+		Bitte einen gültigen Vorname eintragen.
+	</div>
+    </div>
+  </div>
+<div class="row mb-1">
+<label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="Namenszusatz">Namenszusatz:</label>
+<div class="col-sm-9">
+    <input type="text" class="form-control form-control-sm" aria-label="Namenszusatz" id="Namenszusatz" name="vname2" placeholder="z.B. Dr.">
+    </div>
+  </div>
+  <div class="row mb-1">
+  <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="Geburtsname">Geburtsname:</label>
+  <div class="col-sm-9">
+    <input type="text" class="form-control form-control-sm" aria-label="Geburtsname" id="Geburtsname" name="gname">
+    </div>
+  </div>
+  <div class="row mb-1 d-flex align-items-center">
+  <label class="radio control-label col-sm-3 col-form-label col-form-label-sm">Geschlecht:</label>
+  <div class="col-sm-9">
+  <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="sex" id="f" value="1" required>
+  <label class="form-check-label" for="f">f</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="sex" id="m" value="0" required>
+  <label class="form-check-label" for="m">m</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="sex" id="divers" value="2" required>
+  <label class="form-check-label" for="divers">divers</label>
+</div>
+</div>
+</div>
+  <div class="row mb-1">
+  <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="Geburtsdatum">Geburtsdatum:</label>
+  <div class="col-sm-9">
+  <input type="date" class="form-control  form-control-sm" aria-label="Geburtsdatum" id="Geburtsdatum" name="geb" required>
+  <div class="invalid-feedback">
+		Bitte ein Geburtsdatum wählen / eintragen.
+	</div>
+  </div>
+  </div>
+  <div class="row mb-1">
+  <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="strasse">Straße:</label>
+  <div class="col-sm-9">
+    <input type="text" class="form-control  form-control-sm" aria-label="Straße" id="Straße" name="strasse">
+    </div>
+  </div>
+  <div class="row mb-1">
+  <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="PLZ">PLZ:</label>
+  <div class="col-sm-9">
+    <input type="number" class="form-control form-control-sm" aria-label="PLZ" id="PLZ" name="plz">
+    </div>
+  </div>
+  <div class="row mb-1">
+  <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="PLZ">Ort:</label>
+  <div class="col-sm-9">
+    <input type="text" class="form-control form-control-sm" aria-label="Ort" id="Ort" name="ort">
+    </div>
+  </div>
+  <div class="row mb-1">
+  <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="Telefon">Telefon:</label>
+  <div class="col-sm-9">
+      <input type="text" class="form-control form-control-sm" aria-label="Telefon" id="Telefon" name="telefon">
+      </div>
+      
+  </div>
+  <div class="row mb-1">
+  <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="E-Mail">E-Mail:</label>
+  <div class="col-sm-9">
+    <input type="email" class="form-control form-control-sm" aria-label="E-Mail" id="E-Mail" name="email">
+    </div>
+    
+  </div>
+  <div class="row mb-1">
+  <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="Größe">Größe:</label>
+  <div class="col-sm-9">
+    <div class="input-group input-group-sm">
+        <input type="number" class="form-control form-control-sm" aria-label="Größe" id="Größe" name="groesse" onchange="kogf(this)">
+    <span class="input-group-text">cm</span>
+    </div>
+    </div>
+  </div>
+  <div class="row mb-1">
+  <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="Gewicht">Gewicht:</label>
+  <div class="col-sm-9">
+  <div class="input-group input-group-sm">
+      <input type="number" class="form-control form-control-sm" aria-label="Gewicht" id="Gewicht" name="gewicht" onchange="kogf(this)">
+    <span class="input-group-text">kg</span>
+    </div>
+    </div>
+  </div>
+  <div class="row mb-1">
+  <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="KOF">KOF:</label>
+  <div class="col-sm-9">
+  <div class="input-group input-group-sm">
+    <input type="text" class="form-control form-control-sm" aria-label="KOF" id="KOF" name="kof" disabled>
+    <span class="input-group-text">m<sup>2</sup></span>
+    </div>
+    </div>
+  </div>
+  </div>
+   <div class="col">
+      <div class="row mb-1 d-flex align-items-center">
+  <label class="radio control-label col-sm-3 col-form-label col-form-label-sm">Häusliche Versorgung:</label>
+  <div class="col-sm-9">
+  <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="versorgung" id="versorgungunbekannt" value="0" checked>
+  <label class="form-check-label" for="versorgungunbekannt">unbekannt</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="versorgung" id="versorgungnein" value="1">
+  <label class="form-check-label" for="versorgungnein">nein</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="versorgung" id="versorgungja" value="2">
+  <label class="form-check-label" for="versorgungja">ja</label>
+</div>
+</div>
+</div>
+ <div class="row mb-1 d-flex align-items-center">
+  <label class="radio control-label col-sm-3 col-form-label col-form-label-sm">Gesetzlich betreut:</label>
+  <div class="col-sm-9">
+  <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="betreut" id="betreutunbekannt" value="0" checked>
+  <label class="form-check-label" for="betreutunbekannt">unbekannt</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="betreut" id="betreutnein" value="1">
+  <label class="form-check-label" for="betreutnein">nein</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="betreut" id="betreutja" value="2">
+  <label class="form-check-label" for="betreutja">ja</label>
+</div>
+</div>
+</div>
+  <div class="row mb-1">
+  <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="versicherung">Versichertenstatus:</label>
+  <div class="col-sm-9">
+     <select name="versicherung" id="versicherung" class="form-select form-select-sm" aria-label="Versichertenstatus"> 
+                        <option selected value=0>unbekannt </option>
+                        <option value=1>Gesetzlich </option>
+                        <option value=2>Privat </option>
+                        <option value=3>Halbprivat</option>
+                        <option value=4>Asylbewerber </option>
+                        <option value=5>Kostentr&auml;ger ohne IK </option>
+                        <option value=6>Beamtenkasse </option>
+                    </select>
+  </div>
+  </div>
+  <div class="row mb-1">
+  <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="schulbildung">Bildung:</label>
+  <div class="col-sm-9">
+    <select name="schulbildung" id="schulbildung" class="form-select form-select-sm" aria-label="Schulbildung"> 
+                        <option selected value=0>unbekannt </option>
+                        <option value=1>Haupt-/Mittelschulabschluss </option>
+                        <option value=2>Realschulabschluss </option>
+                        <option value=3>Hochschulreife/Abitur</option>
+                        <option value=4>Abgeschlossenes Studium </option>
+                        <option value=5>Kein Schulabschluss </option>
+                    </select>
+    </div>
+  </div>
+<div class="row mb-1">
+<label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="bstand">Berufsstand:</label>
+<div class="col-sm-9">
+   <select name="bstand" id="bstand" class="form-select form-select-sm" aria-label="Berufsstand"> 
+                        <option value=0>unbekannt </option>
+                        <option value=1>Angestellt </option>
+                        <option value=2>Selbst&auml;ndig </option>
+                        <option value=3>Arbeitssuchend</option>
+                        <option value=4>Altersrente </option>
+                        <option value=5>EU-Rente </option>
+                        
+                    </select>
+	</div>
+  </div>
+  <div class="row mb-1">
+  <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="Beruf">Beruf:</label>
+  <div class="col-sm-9">
+    <input type="text" class="form-control form-control-sm" aria-label="Beruf" id="Beruf" name="beruf">
+    </div>
+  </div>
+  <div class="row mb-1">
+  <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="Bemerkung">Bemerkung:</label>
+  <div class="col-sm-9">
+    <textarea name="bemerkung" maxlength=600 rows="7" class="form-control form-control-sm" id="Bemerkung" style="resize: none;"></textarea>
+    </div>
+  </div>
+  <div class="form-group float-end">
+  <input class="btn btn-secondary btn-sm mt-4 me-2" type="submit" value="Submit">
+  <input class="btn btn-secondary btn-sm float-end mt-4" type="reset" value="Reset">
+  </div>
+  </div>
+</form>
+</div>
+</main>
+       <footer class="footer mt-auto py-3 bg-light">
+    <div class="container text-center">
+        <span class="text-muted">Copyright &copy; GP 2022</span>
+    </div>
+</footer>        <script src="/js/jquery-3.6.0.min.js"></script>
+       <script src="/js/bootstrap.bundle.min.js"></script>
+       <script src="/js/form-validation.js"></script>
+       <script>
+           function kogf(e) {
+               gew = parseInt($("#Größe").val());
+               gr = parseInt($("#Gewicht").val());
+               if (gew*gr>0) {
+                   kd = 0.007184 * Math.pow(gr, 0.725) * Math.pow(gew, 0.425);
+                   $("#KOF").val(kd.toFixed(2));
+               }
+           }
+       </script>
+   </body>
+</html>
