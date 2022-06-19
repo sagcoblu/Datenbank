@@ -1,12 +1,24 @@
-main > .container {
-    padding: 60px 15px 0;
-  }
-  
-  main > .container2 {
-      padding-top: 60px;
-  }
-  
-  #ptbody tr {
-      cursor: pointer;
-  }
-  
+.container {
+  padding: 60px 15px 0;
+}
+
+#ptbody tr {
+  cursor: pointer;
+}
+
+section {
+  height: 100%;
+  width: 100%;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+}
+:root{
+  scroll-behavior: auto;
+}
+
+html, body {margin: 0; height: 100%; overflow: hidden}
