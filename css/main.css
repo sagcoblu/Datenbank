@@ -17,8 +17,16 @@ footer {
   width: 100%;
   height: 50px;
 }
+
 :root{
   scroll-behavior: auto;
 }
 
 html, body {margin: 0; height: 100%; overflow: hidden}
+
+li a:hover {
+  background-color: #acd7f2;
+}
+nav-bar.active {
+  background-color:#acd7f2;
+}
