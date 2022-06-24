@@ -98,26 +98,26 @@
             }, "Must be an integer");
         }
    /*
-                                                                   window.onload = function(){
-                                                                       var request = $.ajax({
-                                                                               url: "php/api.php?showp",
-                                                                               dataType: "html"
-                                                                           }); 
-                                                                           request.done(function(msg) {
-                                                                               $("#ptbody").html(msg);
-                                                                           });
-                                                                       $("input").keyup(function(e){
-                                                                           var request = $.ajax({
-                                                                               url: "php/api.php?showp=1",
-                                                                               type: "POST",
-                                                                               data: $(this).closest("form").serialize(),
-                                                                               dataType: "html"
-                                                                           });
-                                                                           request.done(function(msg) {
-                                                                               $("#ptbody").html(msg);
-                                                                           });
-                                                                           });
-                                                                       };*/
+                                                                                            window.onload = function(){
+                                                                                                var request = $.ajax({
+                                                                                                        url: "php/api.php?showp",
+                                                                                                        dataType: "html"
+                                                                                                    }); 
+                                                                                                    request.done(function(msg) {
+                                                                                                        $("#ptbody").html(msg);
+                                                                                                    });
+                                                                                                $("input").keyup(function(e){
+                                                                                                    var request = $.ajax({
+                                                                                                        url: "php/api.php?showp=1",
+                                                                                                        type: "POST",
+                                                                                                        data: $(this).closest("form").serialize(),
+                                                                                                        dataType: "html"
+                                                                                                    });
+                                                                                                    request.done(function(msg) {
+                                                                                                        $("#ptbody").html(msg);
+                                                                                                    });
+                                                                                                    });
+                                                                                                };*/
     </script>
 
 </head>
@@ -457,6 +457,10 @@
                     <h1>Placeholder</h>
                 </div>
             </div>
+            <div class="frmSearch">
+                <input type="text" id="search-box" placeholder="Erstdiagnose">
+                <div id="suggestion-box"></div>
+                <div id="edaigid"></div>
             </div>
         </section>
         <section class="container flex-shrink-0" id="bildgebung">
@@ -1089,28 +1093,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row mb-1 d-flex align-items-center">
-                                <label
-                                    class="radio control-label col-sm-3 col-form-label col-form-label-sm">Massgebliche
-                                    Histologie:</label>
-                                <div class="col-sm-9">
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="mhisto" id="mhistounbekannt"
-                                            value="0" checked="">
-                                        <label class="form-check-label" for="mhistounbekannt">unbekannt</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="mhisto" id="mhistonein"
-                                            value="1">
-                                        <label class="form-check-label" for="mhistonein">nein</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="mhisto" id="mhistoja"
-                                            value="2">
-                                        <label class="form-check-label" for="mhistoja">ja</label>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="row mb-1">
                                 <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
                                     for="probenart">Probenart:</label>
@@ -1122,27 +1104,6 @@
                                         <option value="2">Zytologie </option>
                                         <option value="3">Klinische Einschätzung (keine Probe) </option>
                                     </select>
-                                </div>
-                            </div>
-                            <div class="row mb-1 d-flex align-items-center">
-                                <label
-                                    class="radio control-label col-sm-3 col-form-label col-form-label-sm">Transformation:</label>
-                                <div class="col-sm-9">
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="transformation"
-                                            id="transformationunbekannt" value="0" checked="">
-                                        <label class="form-check-label" for="transformationunbekannt">unbekannt</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="transformation"
-                                            id="transformationnein" value="1">
-                                        <label class="form-check-label" for="transformationnein">nein</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="transformation"
-                                            id="transformationja" value="2">
-                                        <label class="form-check-label" for="transformationja">ja</label>
-                                    </div>
                                 </div>
                             </div>
                             <div class="row mb-1">
@@ -1185,6 +1146,28 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="row mb-1" hidden>
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                    for="rpathologiesonst"></label>
+                                <div class="col-sm-9">
+                                    <div class="input-group input-group-sm">
+                                        <input type="text" class="form-control form-control-sm"
+                                            aria-label="rpathologiesonst" id="rpathologiesonst" name="rpathologiesonst"
+                                            placeholder="Sonstige Referenzpathologie">
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+                                $(document).ready(function () {
+                                    $("#rpathologie").change(function () {
+                                        if (this.value == 7) {
+                                            $("#rpathologiesonst").prop("hidden", false);
+                                        } else {
+                                            $("#rpathologiesonst").prop("hidden", true);
+                                        }
+                                    });
+                                }); 
+                            </script>
                             <br>
                             <div class="row mb-1">
                                 <span style="font-weight:bold">Molekulargenetik:</span>
@@ -1412,11 +1395,9 @@
                             </div>
                             <div class="row mb-1">
                                 <label style class="sr-only col-sm-3 col-form-label col-form-label-sm"
-                                    for="entlassen">Bereits
-                                    entlassen:</label>
+                                    for="entlassen">Bereits entlassen:</label>
                                 <div class="col-sm-9">
-                                    <input type="checkbox" aria-label="entlassen" id="entlassen" name="entlassen"
-                                        checked="">
+                                    <input type="checkbox" aria-label="entlassen" id="entlassen" name="entlassen">
                                 </div>
                             </div>
                             <div class="row mb-1">
@@ -1446,44 +1427,206 @@
             </div>
         </section>
         <section class="container" id="radiotherapie">
-            <div class="row mb-1">
-                <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="radiotherapiedatumanfang">Anfang
-                    der Therapie:</label>
-                <div class="col-sm-9">
-                    <input type="date" class="form-control  form-control-sm" aria-label="radiotherapiedatumanfang"
-                        id="radiotherapiedatumanfang" name="radiotherapiedatumanfang" required>
-                    <div class="invalid-feedback">
-                        Bitte ein Datum wählen / eintragen.
-                    </div>
-                </div>
-            </div>
-            <div class="row mb-1">
-                <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="radiotherapiedatumende">Ende der
-                    Therapie:</label>
-                <div class="col-sm-9">
-                    <input type="date" class="form-control  form-control-sm" aria-label="radiotherapiedatumende"
-                        id="radiotherapiedatumende" name="radiotherapiedatumende">
-                </div>
-            </div>
-            <div class="row mb-1">
-                <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="einzeldosis">Einzeldosis:</label>
-                <div class="col-sm-9">
-                    <div class="input-group input-group-sm">
-                        <input type="number" class="form-control form-control-sm" aria-label="einzeldosis"
-                            id="einzeldosis" name="einzeldosis">
-                        <span class="input-group-text">Gy</span>
+            <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal"
+                data-bs-target="#modalradiotherapie">
+                Strahlentherapie anlegen
+            </button>
+            <div class="modal fade" id="modalradiotherapie" tabindex="-1" aria-labelledby="modalradiotherapieLabel"
+                aria-hidden="true" data-bs-backdrop="static">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalradiotherapieLabel">Strahlentherapie anlegen:</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                    for="radiotherapiedatumanfang">Anfang
+                                    der Therapie:</label>
+                                <div class="col-sm-9">
+                                    <input type="date" class="form-control  form-control-sm"
+                                        aria-label="radiotherapiedatumanfang" id="radiotherapiedatumanfang"
+                                        name="radiotherapiedatumanfang" required>
+                                    <div class="invalid-feedback">
+                                        Bitte ein Datum wählen / eintragen.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                    for="radiotherapiedatumende">Ende der
+                                    Therapie:</label>
+                                <div class="col-sm-9">
+                                    <input type="date" class="form-control  form-control-sm"
+                                        aria-label="radiotherapiedatumende" id="radiotherapiedatumende"
+                                        name="radiotherapiedatumende">
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm "
+                                    for="einzeldosis">Einzeldosis:</label>
+                                <div class="col-sm">
+                                    <div class="input-group input-group-sm">
+                                        <input type="number" class="form-control form-control-sm"
+                                            aria-label="einzeldosis" id="einzeldosis" name="einzeldosis">
+                                        <span class="input-group-text">Gy</span>
+                                    </div>
+                                </div>
+
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm text-end"
+                                    for="gesamtdosis">Gesamtdosis:</label>
+                                <div class="col-sm">
+                                    <div class="input-group input-group-sm">
+                                        <input type="number" class="form-control form-control-sm"
+                                            aria-label="gesamtdosis" id="gesamtdosis" name="gesamtdosis">
+                                        <span class="input-group-text">Gy</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                    for="zielvolumen">Zielvolumen:</label>
+                                <div class="col-sm-9">
+                                    <select name="zielvolumen" id="zielvolumen" class="form-select form-select-sm"
+                                        aria-label="Zielvolumen">
+                                        <option selected value=0>unbekannt </option>
+                                        <option value=1>Ganzhirn </option>
+                                        <option value=2>Helmfeld</option>
+                                        <option value=3>Hintere Schädelgrube </option>
+                                        <option value=4>IMRT </option>
+                                        <option value=4>Involved Field </option>
+                                        <option value=4>Neuroachse </option>
+                                        <option value=4>Stereotaxie </option>
+                                        <option value=4>Tumorregion </option>
+                                        <option value=4>Wirbelsäule </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <label style class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                    for="radioextern">Extern:</label>
+                                <div class="col-sm-9">
+                                    <input type="checkbox" aria-label="Radiotherapie extern" id="radiotherapie"
+                                        name="radiotherapie">
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                    for="radiobemerkung">Bemerkung:</label>
+                                <div class="col-sm-9">
+                                    <textarea name="radiobemerkung" maxlength=600 rows="7"
+                                        class="form-control form-control-sm" id="radiobemerkung"
+                                        style="resize: none;"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Reset</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="container" id="systemtherapie" style="display:flex; justify-content: center;">
-            <div class="col">
-                <div class="row mb-1">
-                    <h1>Placeholder</h>
+
+        <section class="container" id="systemtherapie">
+            <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal"
+                data-bs-target="#modalsystemtherapie">
+                Systemtherapie anlegen
+            </button>
+            <div class="modal fade" id="modalsystemtherapie" tabindex="-1" aria-labelledby="modalsystemtherapieLabel"
+                aria-hidden="true" data-bs-backdrop="static">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalsystemtherapieLabel">Systemtherapie anlegen:</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                    for="systemtherapiedatumanfang">Anfang
+                                    der Therapie:</label>
+                                <div class="col-sm">
+                                    <input type="date" class="form-control  form-control-sm"
+                                        aria-label="systemtherapiedatumanfang" id="systemtherapiedatumanfang"
+                                        name="systemtherapiedatumanfang" required>
+                                    <div class="invalid-feedback">
+                                        Bitte ein Datum wählen / eintragen.
+                                    </div>
+                                </div>
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm text-end"
+                                    for="systemtherapiedatumende">Ende der
+                                    Therapie:</label>
+                                <div class="col-sm">
+                                    <input type="date" class="form-control  form-control-sm"
+                                        aria-label="systemtherapiedatumende" id="systemtherapiedatumende"
+                                        name="systemtherapiedatumende">
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                    for="systemtherapieprotokoll">Protokoll:</label>
+                                <div class="col-sm-9">
+                                    <select name="systemtherapieprotokoll" id="systemtherapieprotokoll"
+                                        class="form-select form-select-sm" aria-label="systemtherapieprotokoll">
+                                        <option selected disabled hidden value=0> </option>
+                                        <option value=1>ACNU </option>
+                                        <option value=2>BCNU</option>
+                                        <option value=3>CCNU </option>
+                                        <option value=4>Temozolomid </option>
+                                        <option value=5>Procarbazin </option>
+                                        <option value=6>Methotrexat (MTX) </option>
+                                        <option value=7>Cytarabin (Ara-C) </option>
+                                        <option value=8>Vincristin </option>
+                                        <option value=9>PCV </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm "
+                                    for="systemtherapiedosis">Dosis:</label>
+                                <div class="col-sm">
+                                    <div class="input-group input-group-sm">
+                                        <input type="number" class="form-control form-control-sm"
+                                            aria-label="systemtherapiedosis" id="systemtherapiedosis"
+                                            name="systemtherapiedosis">
+                                        <span class="input-group-text">mg/m<sup>2</sup></span>
+                                    </div>
+                                </div>
+                                <div class="row mb-1">
+                                    <label style class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                        for="radioextern">Extern:</label>
+                                    <div class="col-sm-9">
+                                        <input type="checkbox" aria-label="Radiotherapie extern" id="radiotherapie"
+                                            name="radiotherapie">
+                                    </div>
+                                </div>
+                                <div class="row mb-1">
+                                    <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                        for="radiobemerkung">Bemerkung:</label>
+                                    <div class="col-sm-9">
+                                        <textarea name="radiobemerkung" maxlength=600 rows="7"
+                                            class="form-control form-control-sm" id="radiobemerkung"
+                                            style="resize: none;"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Reset</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            </div>
+
+
+
         </section>
+
         <section class="container" id="studie">
             <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal"
                 data-bs-target="#modalstudie">
@@ -1502,7 +1645,7 @@
                                 <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="studiename">Name
                                     der Studie:</label>
                                 <div class="col-sm-9">
-                                    <select name="versicherung" id="studiename" class="form-select form-select-sm"
+                                    <select name="studiename" id="studiename" class="form-select form-select-sm"
                                         aria-label="Name der Studie">
                                         <option selected value=0></option>
                                         <option value=1></option>
@@ -1540,7 +1683,7 @@
                                     <select name="grundausschleusung" id="grundausschleusung"
                                         class="form-select form-select-sm" aria-label="Grund der Ausschleusung"
                                         disabled>
-                                        <option disabled selected value=0></option>
+                                        <option disabled selected hidden value=0></option>
                                         <option value=1>Protokollgemäß (planmäßig)</option>
                                         <option value=2>Toxizitäten</option>
                                         <option value=3>Patient lehnt Fortführung ab</option>
@@ -1606,8 +1749,6 @@
             }
         });
     });
-</script>
-<script>
     $(document).ready(function () {
         $('input[type=radio][name=aufkltum]').change(function () {
             if (this.value == '2') {
@@ -1679,4 +1820,9 @@
             }
         });
     });
+</script>
+
+<!--Systemtherapie:-->
+<script>
+
 </script>

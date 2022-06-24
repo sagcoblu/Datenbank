@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Neuro Onko</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <section class="container flex-shrink-0" id="aufenthalte">
+        <table class="table table-striped table-hover mt-2" id="tableaufenthalte">
+            <thead>
+                <tr>
+                    <th scope="col">Aufnahmedatum</th>
+                    <th scope="col">Entlassdatum</th>
+                    <th scope="col">Art der Aufnahme</th>
+                    <th scope="col">Aufnahmeumstand</th>
+                    <th scope="col">Zuweiser</th>
+                    <th scope="col">Aufenthaltsdauer</th>
+                </tr>
+            </thead>
+            <tbody id="tbodyaufenthalte">
+                <tr>
+                    <td> 01.01.2000</td>
+                    <td> 02.01.2000</td>
+                    <td> stationär</td>
+                    <td> Verlegung</td>
+                    <td> Tuttlingen</td>
+                    <td> 1</td>
+                </tr>
+                <tr>
+                    <td> 01.01.2000</td>
+                    <td> 02.01.2000</td>
+                    <td> stationär</td>
+                    <td> Verlegung</td>
+                    <td> Tuttlingen</td>
+                    <td> 1</td>
+                </tr>
+                <tr>
+                    <td> 01.01.2000</td>
+                    <td> 02.01.2000</td>
+                    <td> stationär</td>
+                    <td> Verlegung</td>
+                    <td> Tuttlingen</td>
+                    <td> 1</td>
+                </tr>
+                <tr>
+                    <td> 01.01.2000</td>
+                    <td> 02.01.2000</td>
+                    <td> stationär</td>
+                    <td> Verlegung</td>
+                    <td> Tuttlingen</td>
+                    <td> 1</td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal"
+            data-bs-target="#modalaufenthalte">
+            Aufenthalt anlegen
+        </button>
+        <div class="modal fade" id="modalaufenthalte" tabindex="-1" aria-labelledby="modalaufenthalteLabel"
+            aria-hidden="true" data-bs-backdrop="static">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalaufenthaltLabel">Aufenthalt anlegen:</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row mb-1">
+                            <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                for="adatum">Aufnahmedatum:</label>
+                            <div class="col-sm-9">
+                                <input type="date" class="form-control  form-control-sm" aria-label="adatum" id="adatum"
+                                    name="adatum" required="">
+                                <div class="invalid-feedback"> Bitte ein Aufnahmedatum wählen / eintragen. </div>
+                            </div>
+                        </div>
+                        <div class="row mb-1">
+                            <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="aufnahme">Art der
+                                Aufnahme:</label>
+                            <div class="col-sm-9">
+                                <select name="aufnahme" id="aufnahme" class="form-select form-select-sm"
+                                    aria-label="Art der Aufnahme">
+                                    <option selected value=0>unbekannt </option>
+                                    <option value=1>stationär </option>
+                                    <option value=2>ambulant </option>
+                                    <option value=3>teilstationär </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-1">
+                            <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                for="uaufnahme">Aufnahmeumstand:</label>
+                            <div class="col-sm-9">
+                                <select name="uaufnahme" id="uaufnahme" class="form-select form-select-sm"
+                                    aria-label="Umstand der Aufnahme">
+                                    <option selected value=0>unbekannt </option>
+                                    <option value=1>Notfall </option>
+                                    <option value=2>Elektiv </option>
+                                    <option value=3>Verlegung </option>
+                                    <option value=4>Einweisung </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-1">
+                            <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                for="zuweiser">Zuweiser:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control form-control-sm" aria-label="zuweiser"
+                                    id="zuweiser" name="zuweiser" disabled>
+                            </div>
+                        </div>
+                        <div class="row mb-1">
+                            <label style class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                for="entlassen">Bereits entlassen:</label>
+                            <div class="col-sm-9">
+                                <input type="checkbox" aria-label="entlassen" id="entlassen" name="entlassen" checked>
+                            </div>
+                        </div>
+                        <div class="row mb-1">
+                            <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                for="edatum">Entlassdatum:</label>
+                            <div class="col-sm-9">
+                                <input type="date" class="form-control  form-control-sm" aria-label="edatum" id="edatum"
+                                    name="edatum">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="reset" class="btn btn-primary" value="Zurücksetzen">
+                        <button type="button" class="btn btn-primary">Speichern</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/form-validation.js"></script>
+</body>
+
+</html>
+<script>
+    document.getElementById('uaufnahme').addEventListener('change', function () {
+        if (this.value == 3) {
+            document.getElementById('zuweiser').disabled = false;
+        } else if (this.value == 4) {
+            document.getElementById('zuweiser').disabled = false;
+        } else {
+            document.getElementById('zuweiser').disabled = true;
+        }
+    });
+
+    document.getElementById('entlassen').onchange = function () {
+        document.getElementById('edatum').disabled = !this.checked;
+        document.getElementById('edatum').value = "";
+    };
+
+    /* $(document).ready(function () {
+         $("#aufnahme").change(function () {
+             if (this.value == "2") {
+                 $("#edatum").val("#adatum");
+             }
+             });
+     });*/
+
+</script>
