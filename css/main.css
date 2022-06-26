@@ -26,6 +26,7 @@ html, body {
 li a:hover {
   background-color: #acd7f2;
 }
-.active {
+
+.nav-link.active {
   background-color: #acd7f2;
 }

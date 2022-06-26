@@ -8,7 +8,7 @@
 
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/main.css" rel="stylesheet">
-    <script>
+    <!-- <script>
         function dtoggle(e) {
             $(e).find("input, label, div.input-group, div.form-check").removeClass("d-none");
             $(e).find("span.ajx").addClass("d-none");
@@ -98,28 +98,28 @@
             }, "Must be an integer");
         }
    /*
-                                                                                            window.onload = function(){
-                                                                                                var request = $.ajax({
-                                                                                                        url: "php/api.php?showp",
-                                                                                                        dataType: "html"
-                                                                                                    }); 
-                                                                                                    request.done(function(msg) {
-                                                                                                        $("#ptbody").html(msg);
-                                                                                                    });
-                                                                                                $("input").keyup(function(e){
-                                                                                                    var request = $.ajax({
-                                                                                                        url: "php/api.php?showp=1",
-                                                                                                        type: "POST",
-                                                                                                        data: $(this).closest("form").serialize(),
-                                                                                                        dataType: "html"
-                                                                                                    });
-                                                                                                    request.done(function(msg) {
-                                                                                                        $("#ptbody").html(msg);
-                                                                                                    });
-                                                                                                    });
-                                                                                                };*/
+                                                                                                 window.onload = function(){
+                                                                                                     var request = $.ajax({
+                                                                                                             url: "php/api.php?showp",
+                                                                                                             dataType: "html"
+                                                                                                         }); 
+                                                                                                         request.done(function(msg) {
+                                                                                                             $("#ptbody").html(msg);
+                                                                                                         });
+                                                                                                     $("input").keyup(function(e){
+                                                                                                         var request = $.ajax({
+                                                                                                             url: "php/api.php?showp=1",
+                                                                                                             type: "POST",
+                                                                                                             data: $(this).closest("form").serialize(),
+                                                                                                             dataType: "html"
+                                                                                                         });
+                                                                                                         request.done(function(msg) {
+                                                                                                             $("#ptbody").html(msg);
+                                                                                                         });
+                                                                                                         });
+                                                                                                     };*/
     </script>
-
+-->
 </head>
 
 <body class="d-flex flex-column h-100" data-bs-spy="scroll" data-bs-target="navbarSupportedContent">
@@ -154,9 +154,6 @@
                             <a class="nav-link" href="#aufenthalte">Aufenthalte</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#verlauf">Verlauf</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="#radiotherapie">Radiotherapie</a>
                         </li>
                         <li class="nav-item">
@@ -164,6 +161,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#studie">Studie</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#verlauf">Verlauf</a>
                         </li>
                     </ul>
                 </div>
@@ -451,16 +451,267 @@
                 </div>
             </form>
         </section>
-        <section class="container" id="diagnostik" style="display:flex; justify-content: center;">
-            <div class="col">
-                <div class="row mb-1">
-                    <h1>Placeholder</h>
+        <section class="container" id="diagnostik">
+            <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal"
+                data-bs-target="#modaldiagnostik">
+                Diagnose anlegen
+            </button>
+            <div class="modal fade" id="modaldiagnostik" tabindex="-1" aria-labelledby="modaldiagnostikLabel"
+                aria-hidden="true" data-bs-backdrop="static">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modaldiagnostikLabel">Diagnose anlegen:</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                    for="diagnosedatum">Diagnosedatum:</label>
+                                <div class="col-sm-9">
+                                    <input type="date" class="form-control  form-control-sm" aria-label="Diagnosedatum"
+                                        id="diagnosedatum" name="diagnosedatum" required="">
+                                    <div class="invalid-feedback"> Bitte ein Datum wählen / eintragen. </div>
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                    for="search-box">Diagnose nach WHO:</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control  form-control-sm" type="text" id="search-box" required>
+                                    <div id="suggestion-box"></div>
+                                    <div id="edaigid"></div>
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                    for="betroffeneregion">Betroffene Region:</label>
+                                <div class="col-sm-9">
+                                    <select name="betroffeneregion" id="betroffeneregion"
+                                        class="form-select form-select-sm" aria-label="Betroffene Region" required>
+                                        <option value="0" disabled selected></option>
+                                        <optgroup label='Gehirn'>
+                                            <option id='Frontallappen'>Frontallappen</option>
+                                            <option id='Orbitofrontaler Cortex'>Orbitofrontaler Cortex</option>
+                                            <option id='Prämotorischer Cortex'>Prämotorischer Cortex</option>
+                                            <option id='Gyrus frontalis medius'>Gyrus frontalis medius</option>
+                                            <option id='Gyrus frontalis inferior'>Gyrus frontalis inferior
+                                            </option>
+                                            <option id='Präfrontaler Cortex'>Präfrontaler Cortex</option>
+                                            <option id='Motorcortex'>Motorcortex</option>
+                                            <option id='Broca-Areal'>Broca-Areal</option>
+                                            <option id='Okzipitallappen'>Okzipitallappen</option>
+                                            <option id='Primärer visueller Cortex'>Primärer visueller Cortex
+                                            </option>
+                                            <option id='Parietallappen'>Parietallappen</option>
+                                            <option id='Lobulus parietalis inferior'>Lobulus parietalis inferior
+                                            </option>
+                                            <option id='Lobulus parietalis superior'>Lobulus parietalis superior
+                                            </option>
+                                            <option id='Praecuneus'>Praecuneus</option>
+                                            <option id='Somatosensorischer Cortex'>Somatosensorischer Cortex
+                                            </option>
+                                            <option id='Temporallappen'>Temporallappen</option>
+                                            <option id='Primärer auditiver Cortex'>Primärer auditiver Cortex
+                                            </option>
+                                            <option id='Wernicke-Areal'>Wernicke-Areal</option>
+                                            <option id='Cingulärer Cortex'>Cingulärer Cortex</option>
+                                            <option id='Hirnhäute'>Hirnhäute</option>
+                                            <option id='Stammhirn'>Stammhirn</option>
+                                            <option id='Mittelhirn'>Mittelhirn</option>
+                                            <option id='Pons'>Pons</option>
+                                            <option id='Medulla Oblongata'>Medulla Oblongata</option>
+                                            <option id='Limbisches System'>Limbisches System</option>
+                                            <option id='Area entorhinalis'>Area entorhinalis</option>
+                                            <option id='Amygdala'>Amygdala</option>
+                                            <option id='Hippocampus'>Hippocampus</option>
+                                            <option id='Subiculum'>Subiculum</option>
+                                            <option id='Gyrus dentatus'>Gyrus dentatus</option>
+                                            <option id='Hypothalamus'>Hypothalamus</option>
+                                            <option id='Thalamus'>Thalamus</option>
+                                            <option id='Ventrikel'>Ventrikel</option>
+                                            <option id='Hypophyse'>Hypophyse</option>
+                                            <option id='Basalganglien'>Basalganglien</option>
+                                            <option id='Nucleus caudatus'>Nucleus caudatus</option>
+                                            <option id='Globus pallidus'>Globus pallidus</option>
+                                            <option id='Nucleus accumbens'>Nucleus accumbens</option>
+                                            <option id='Putamen'>Putamen</option>
+                                            <option id='Substantia nigra'>Substantia nigra</option>
+                                            <option id='Nucleus subthalamicus'>Nucleus subthalamicus</option>
+                                            <option id='Cerebellum'>Cerebellum</option>
+                                            <option id='Corpus Callosum'>Corpus Callosum</option>
+                                            <option id='Bulbus olfactorius'>Bulbus olfactorius</option>
+                                            <option id='Cranial Nerves'>Cranial Nerves</option>
+                                            <option id='Hirnnerv I Olfactorius'>Hirnnerv I Olfactorius</option>
+                                            <option id='Hirnnerv II Opticus'>Hirnnerv II Opticus</option>
+                                            <option id='Hirnnerv III Oculomotorius'>Hirnnerv III Oculomotorius
+                                            </option>
+                                            <option id='Hirnnerv IV Trochlearis'>Hirnnerv IV Trochlearis
+                                            </option>
+                                            <option id='Hirnnerv V Trigeminus'>Hirnnerv V Trigeminus</option>
+                                            <option id='Hirnnerv VI Abducens'>Hirnnerv VI Abducens</option>
+                                            <option id='Hirnnerv VII Facialis'>Hirnnerv VII Facialis</option>
+                                            <option id='Hirnnerv VIII Vestibulocochlearis'>Hirnnerv VIII
+                                                Vestibulocochlearis</option>
+                                            <option id='Hirnnerv IX Glossopharyngeus'>Hirnnerv IX
+                                                Glossopharyngeus</option>
+                                            <option id='Hirnnerv X Vagus'>Hirnnerv X Vagus</option>
+                                            <option id='Hirnnerv XI Accessorius'>Hirnnerv XI Accessorius
+                                            </option>
+                                            <option id='Hirnnerv XII Hypoglossus'>Hirnnerv XII Hypoglossus
+                                            </option>
+                                            <option id='Wirbelsäule'>Wirbelsäule</option>
+                                        </optgroup>
+                                        <optgroup label='Halswirbelsäule'>
+                                            <option id='C1'>C1</option>
+                                            <option id='C2'>C2</option>
+                                            <option id='C3'>C3</option>
+                                            <option id='C4'>C4</option>
+                                            <option id='C5'>C5</option>
+                                            <option id='C6'>C6</option>
+                                            <option id='C7'>C7</option>
+                                        </optgroup>
+                                        <optgroup label='Brustwirbelsäule'>
+                                            <option id='T1'>T1</option>
+                                            <option id='T2'>T2</option>
+                                            <option id='T3'>T3</option>
+                                            <option id='T4'>T4</option>
+                                            <option id='T5'>T5</option>
+                                            <option id='T6'>T6</option>
+                                            <option id='T7'>T7</option>
+                                            <option id='T8'>T8</option>
+                                            <option id='T9'>T9</option>
+                                            <option id='T10'>T10</option>
+                                            <option id='T11'>T11</option>
+                                            <option id='T12'>T12</option>
+                                        </optgroup>
+                                        <optgroup label='Lendenwirbelsäule'>
+                                            <option id='L1'>L1</option>
+                                            <option id='L2'>L2</option>
+                                            <option id='L3'>L3</option>
+                                            <option id='L4'>L4</option>
+                                            <option id='L5'>L5</option>
+                                            <option id='Sacrum'>Sacrum</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-1 d-flex align-items-center">
+                                <label
+                                    class="radio control-label col-sm-3 col-form-label col-form-label-sm">Seite:</label>
+                                <div class="col-sm-9">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="diagnoseseite"
+                                            id="diagnoseseiterechts" value="0">
+                                        <label class="form-check-label" for="diagnoseseiterechts">rechts</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="diagnoseseite"
+                                            id="diagnoseseitelinks" value="1">
+                                        <label class="form-check-label" for="diagnoseseitelinks">links</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="diagnoseseite"
+                                            id="diagnoseseitebeidseits" value="2">
+                                        <label class="form-check-label" for="diagnoseseitebeidseits">beidseits</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="diagnoseseite"
+                                            id="diagnoseseiteirrelevant" value="3">
+                                        <label class="form-check-label" for="diagnoseseiteirrelevant">irrelevant</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="diagnoseart">Art
+                                    der Diagnose:</label>
+                                <div class="col-sm-9">
+                                    <select name="diagnoseart" id="diagnoseart" class="form-select form-select-sm"
+                                        aria-label="Art der Diagnose">
+                                        <option value=0>unbekannt </option>
+                                        <option value=1>Primärfall </option>
+                                        <option value=2>Erstkarzinom außerhalb der Primärfalldefinition </option>
+                                        <option value=3>Rezidiv</option>
+                                        <option value=4>Lokoregionäre Metastase </option>
+                                        <option value=5>Fernmetastase </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="diagnoseverfahren">Verfahren der Diagnosefeststellung:</label>
+                                <div class="col-sm-9">
+                                    <select name="diagnoseverfahren" id="diagnoseverfahren" class="form-select form-select-sm"
+                                        aria-label="Verfahren der Diagnosefeststellung">
+                                        <option>unbekannt</option>
+                                        <option id='ASA-Score'>ASA-Score</option>
+                                        <option id='Allgemeinbefinden'> Allgemeinbefinden</option>
+                                        <option id='Angiographie'> Angiographie</option>
+                                        <option id='Aszitespunktion'> Aszitespunktion</option>
+                                        <option id='CT Abdomen'> CT Abdomen</option>
+                                        <option id='CT Becken'> CT Becken</option>
+                                        <option id='CT Körperstamm'> CT Körperstamm</option>
+                                        <option id='CT Oberbauch'> CT Oberbauch</option>
+                                        <option id='CT Schädel'> CT Schädel</option>
+                                        <option id='CT Thorax'> CT Thorax</option>
+                                        <option id='CT Wirbelsäule'> CT Wirbelsäule</option>
+                                        <option id='CT/MRT Gehirn'> CT/MRT Gehirn</option>
+                                        <option id='EEG'> EEG</option>
+                                        <option id='Echokardiographie'> Echokardiographie</option>
+                                        <option id='Klinische Einschätzung'> Klinische Einschätzung</option>
+                                        <option id='Liquordiagnostik'> Liquordiagnostik</option>
+                                        <option id='MRT Abdomen'> MRT Abdomen</option>
+                                        <option id='MRT Becken'> MRT Becken</option>
+                                        <option id='MRT Schädel (Craniales MRT)'> MRT Schädel (Craniales MRT)</option>
+                                        <option id='MRT Wirbelsäule'> MRT Wirbelsäule</option>
+                                        <option id='Neurologische Untersuchung'> Neurologische Untersuchung</option>
+                                        <option id='Neuropsychologische Diagnostik'> Neuropsychologische Diagnostik</option>
+                                        <option id='PET Schädel'> PET Schädel</option>
+                                        <option id='PET-CT'> PET-CT</option>
+                                        <option id='Röntgen Abdomen'> Röntgen Abdomen</option>
+                                        <option id='Röntgen Thorax'> Röntgen Thorax</option>
+                                        <option id='Schmerzen (NRS-Skala)'> Schmerzen (NRS-Skala)</option>
+                                        <option id='Skelettszintigraphie'> Skelettszintigraphie</option>
+                                        <option id='Sonographie Abdomen'> Sonographie Abdomen</option>
+                                        </select> 
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-1 d-flex align-items-center">
+                                <label class="radio control-label col-sm-3 col-form-label col-form-label-sm">Extern durchgeführt:</label>
+                                <div class="col-sm-9">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="diagnoseextern"
+                                            id="diagnoseexternunbekannt" value="0" checked="">
+                                        <label class="form-check-label" for="diagnoseexternunbekannt">unbekannt</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="diagnoseextern" id="diagnoseexternnein"
+                                            value="1">
+                                        <label class="form-check-label" for="diagnoseexternnein">nein</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="diagnoseextern" id="diagnoseexternja"
+                                            value="2">
+                                        <label class="form-check-label" for="diagnoseexternja">ja</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                    for="diagnosebemerkung">Bemerkung:</label>
+                                <div class="col-sm-9">
+                                    <textarea name="diagnosebemerkung" maxlength=600 rows="7"
+                                        class="form-control form-control-sm" id="diagnosebemerkung"
+                                        style="resize: none;"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="reset" class="btn btn-primary" value="Zurücksetzen">
+                            <button type="button" class="btn btn-primary">Speichern</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="frmSearch">
-                <input type="text" id="search-box" placeholder="Erstdiagnose">
-                <div id="suggestion-box"></div>
-                <div id="edaigid"></div>
             </div>
         </section>
         <section class="container flex-shrink-0" id="bildgebung">
@@ -523,12 +774,14 @@
                                         aria-selected="false">CT</button>
                                     <button class="nav-link" id="nav-CT-Angio-tab" data-bs-toggle="tab"
                                         data-bs-target="#nav-CT-Angio" type="button" role="tab"
-                                        aria-controls="nav-CT-Angio" aria-selected="false">CT-Angio</button>
+                                        aria-controls="nav-CT-Angio" aria-selected="false">?CT-Angio?</button>
+                                    <button class="nav-link" id="nav-PET-MRT-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nav-PET-MRT" type="button" role="tab"
+                                        aria-controls="nav-PET-MRT" aria-selected="false">PET-MRT</button>
                                 </div>
                             </nav>
                             <div class="tab-content" id="nav-tabContent">
-                                <div class="tab-pane fade show active" id="nav-MRT" role="tabpanel"
-                                    aria-labelledby="nav-MRT-tab">
+                                <div class="tab-pane fade " id="nav-MRT" role="tabpanel" aria-labelledby="nav-MRT-tab">
                                     <br>
                                     <div class="row mb-1">
                                         <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
@@ -751,18 +1004,230 @@
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="nav-CT-Angio" role="tabpanel"
-                                    aria-labelledby="nav-CT-Angio-tab">...
+                                    aria-labelledby="nav-CT-Angio-tab">
+                                    <br>
+                                    <div class="row mb-1">
+                                        <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                            for="ctdatum">Datum:</label>
+                                        <div class="col-sm-9">
+                                            <input type="date" class="form-control  form-control-sm"
+                                                aria-label="CT-datum" id="ctdatum" name="ctdatum" required="">
+                                            <div class="invalid-feedback"> Bitte ein Datum wählen / eintragen. </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-1">
+                                        <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                            for="ctlokalisation">Lokalisation:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control form-control-sm"
+                                                aria-label="CT-lokalisation" id="ctlokalisation" name="ctlokalisation"
+                                                placeholder="Lokalisation">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-1 d-flex align-items-center">
+                                        <label
+                                            class="radio control-label col-sm-3 col-form-label col-form-label-sm">Seite:</label>
+                                        <div class="col-sm-9">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="ctseite"
+                                                    id="ctseiterechts" value="0">
+                                                <label class="form-check-label" for="ctseiterechts">rechts</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="ctseite"
+                                                    id="ctseitelinks" value="1">
+                                                <label class="form-check-label" for="ctseitelinks">links</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="ctseite"
+                                                    id="ctseitebeidseits" value="2">
+                                                <label class="form-check-label" for="ctseitebeidseits">beidseits</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="ctseite"
+                                                    id="ctseiteirrelevant" value="3">
+                                                <label class="form-check-label"
+                                                    for="ctseiteirrelevant">irrelevant</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-1 d-flex align-items-center">
+                                        <label
+                                            class="radio control-label col-sm-3 col-form-label col-form-label-sm">Kontrastmittel:</label>
+                                        <div class="col-sm-9">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="ctkontrastmittel"
+                                                    id="ctkontrastmittelja" value="0">
+                                                <label class="form-check-label" for="ctkontrastmittelja">ja</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="ctkontrastmittel"
+                                                    id="ctkontrastmittelnein" value="1">
+                                                <label class="form-check-label" for="ctkontrastmittelnein">nein</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-1">
+                                        <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                            for="cttumorvolumen">Tumorvolumen:</label>
+                                        <div class="col-sm-9">
+                                            <div class="input-group input-group-sm">
+                                                <input type="number" class="form-control form-control-sm"
+                                                    aria-label="cttumorvolumen" id="cttumorvolumen"
+                                                    name="cttumorvolumen" value="">
+                                                <span class="input-group-text">cm<sup>3</sup></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-1">
+                                        <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                            for="ctresttumor">Resttumor:</label>
+                                        <div class="col-sm-9">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="ctresttumor"
+                                                    id="ctresttumorja" value="0">
+                                                <label class="form-check-label" for="mrtresttumorja">ja</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="ctresttumor"
+                                                    id="ctresttumornein" value="1">
+                                                <label class="form-check-label" for="ctresttumornein">nein</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="ctresttumor"
+                                                    id="ctresttumorpräop" value="2">
+                                                <label class="form-check-label"
+                                                    for="ctresttumorpräop">präoperativ</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-1">
+                                        <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                            for="ctresttumorvolumen">Resttumorvolumen:</label>
+                                        <div class="col-sm-9">
+                                            <div class="input-group input-group-sm">
+                                                <input type="number" class="form-control form-control-sm"
+                                                    aria-label="ctresttumorvolumen" id="ctresttumorvolumen"
+                                                    name="ctresttumorvolumen" disabled="">
+                                                <span class="input-group-text">cm<sup>3</sup></span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="tab-pane fade" id="nav-PET" role="tabpanel" aria-labelledby="nav-PET-tab">
-                                    ...</div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Reset</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
+                                <div class="tab-pane fade" id="nav-PET-MRT" role="tabpanel"
+                                    aria-labelledby="nav-PET-MRT-tab">
+                                    <br>
+                                    <div class="row mb-1">
+                                        <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                            for="petmrtdatum">Datum:</label>
+                                        <div class="col-sm-9">
+                                            <input type="date" class="form-control  form-control-sm"
+                                                aria-label="PET-MRT-datum" id="petmrtdatum" name="petmrtdatum"
+                                                required="">
+                                            <div class="invalid-feedback"> Bitte ein Datum wählen / eintragen. </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-1">
+                                        <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                            for="petmrtlokalisation">Lokalisation:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control form-control-sm"
+                                                aria-label="petmrtlokalisation" id="petmrtlokalisation"
+                                                name="petmrtlokalisation" placeholder="Lokalisation">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-1 d-flex align-items-center">
+                                        <label
+                                            class="radio control-label col-sm-3 col-form-label col-form-label-sm">Seite:</label>
+                                        <div class="col-sm-9">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="petmrtseite"
+                                                    id="petmrtseiterechts" value="0">
+                                                <label class="form-check-label" for="petmrtseiterechts">rechts</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="petmrtseite"
+                                                    id="petmrtseitelinks" value="1">
+                                                <label class="form-check-label" for="petmrtseitelinks">links</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="petmrtseite"
+                                                    id="petmrtseitebeidseits" value="2">
+                                                <label class="form-check-label"
+                                                    for="petmrtseitebeidseits">beidseits</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="petmrtseite"
+                                                    id="petmrtseiteirrelevant" value="3">
+                                                <label class="form-check-label"
+                                                    for="petmrtseiteirrelevant">irrelevant</label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row mb-1 d-flex align-items-center">
+                                        <label
+                                            class="radio control-label col-sm-3 col-form-label col-form-label-sm">Tracer:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control form-control-sm"
+                                                aria-label="petmrttracer" id="petmrttracer" name="petmrttracer">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-1">
+                                        <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                            for="petmrttumorvolumen">Tumorvolumen:</label>
+                                        <div class="col-sm-9">
+                                            <div class="input-group input-group-sm">
+                                                <input type="number" class="form-control form-control-sm"
+                                                    aria-label="petmrttumorvolumen" id="petmrttumorvolumen"
+                                                    name="petmrttumorvolumen" value="">
+                                                <span class="input-group-text">cm<sup>3</sup></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-1">
+                                        <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                            for="petmrtresttumor">Resttumor:</label>
+                                        <div class="col-sm-9">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="petmrtresttumor"
+                                                    id="petmrtresttumorja" value="0">
+                                                <label class="form-check-label" for="petmrtresttumorja">ja</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="petmrtresttumor"
+                                                    id="petmrtresttumornein" value="1">
+                                                <label class="form-check-label" for="petmrtresttumornein">nein</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="petmrtresttumor"
+                                                    id="petmrtresttumorpräop" value="2">
+                                                <label class="form-check-label"
+                                                    for="petmrtresttumorpräop">präoperativ</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-1">
+                                        <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                            for="petmrtresttumorvolumen">Resttumorvolumen:</label>
+                                        <div class="col-sm-9">
+                                            <div class="input-group input-group-sm">
+                                                <input type="number" class="form-control form-control-sm"
+                                                    aria-label="petmrtresttumorvolumen" id="petmrtresttumorvolumen"
+                                                    name="petmrtresttumorvolumen" disabled="">
+                                                <span class="input-group-text">cm<sup>3</sup></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <div class="modal-footer">
+                            <input type="reset" class="btn btn-primary" value="Zurücksetzen">
+                            <button type="button" class="btn btn-primary">Speichern</button>
+                        </div>
                     </div>
+                </div>
         </section>
         <section class="container flex-shrink-0" id="operation">
             <table class="table table-striped table-hover mt-2" id="tableoperation">
@@ -831,13 +1296,12 @@
                                         aria-label="Indikation zur Operation">
                                         <option value="0" disabled selected></option>
                                         <option value="1">Primär-OP</option>
-                                        <option value="2">Komplettierungs-OP</option>
+                                        <option value="2">Nachresektion</option>
                                         <option value="3">1. Rezidiv-OP</option>
                                         <option value="4">2. Rezidiv-OP</option>
                                         <option value="5">Wundrevision bei Infektion</option>
                                         <option value="6">Nachblutung</option>
-                                        <option value="7">Revision</option>
-                                        <option value="8">Andere</option>
+                                        <option value="7">Andere</option>
                                     </select>
                                 </div>
                             </div>
@@ -888,7 +1352,7 @@
                                         aria-label="Operativer Zugang">
                                         <option value="0" disabled selected></option>
                                         <option value="1">fronto-lateral</option>
-                                        <option value="2">peritonal</option>
+                                        <option value="2">pterional</option>
                                         <option value="3">bifrontal</option>
                                         <option value="4">Interhemisphären Zugang</option>
                                         <option value="5">retrosigmoidal</option>
@@ -935,6 +1399,18 @@
                                     <div>
                                         <input type="checkbox" id="wachop" name="wachop">
                                         <label for="wachop">Wach-OP</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="elektrophysio" name="elektrophysio">
+                                        <label for="elektrophysio">Elektrophysiologie</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="endoassist" name="endoassist">
+                                        <label for="endoassist">Endoskopisch assistiert</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="endoskopisch" name="endoskopisch">
+                                        <label for="endoskopisch">Endoskopisch</label>
                                     </div>
                                 </div>
                             </div>
@@ -1029,9 +1505,8 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Reset</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <input type="reset" class="btn btn-primary" value="Zurücksetzen">
+                            <button type="button" class="btn btn-primary">Speichern</button>
                         </div>
                     </div>
                 </div>
@@ -1146,28 +1621,17 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="row mb-1" hidden>
+                            <div class="row mb-1">
                                 <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
                                     for="rpathologiesonst"></label>
                                 <div class="col-sm-9">
                                     <div class="input-group input-group-sm">
                                         <input type="text" class="form-control form-control-sm"
                                             aria-label="rpathologiesonst" id="rpathologiesonst" name="rpathologiesonst"
-                                            placeholder="Sonstige Referenzpathologie">
+                                            placeholder="Sonstige Referenzpathologie" style="display: none;">
                                     </div>
                                 </div>
                             </div>
-                            <script>
-                                $(document).ready(function () {
-                                    $("#rpathologie").change(function () {
-                                        if (this.value == 7) {
-                                            $("#rpathologiesonst").prop("hidden", false);
-                                        } else {
-                                            $("#rpathologiesonst").prop("hidden", true);
-                                        }
-                                    });
-                                }); 
-                            </script>
                             <br>
                             <div class="row mb-1">
                                 <span style="font-weight:bold">Molekulargenetik:</span>
@@ -1267,6 +1731,18 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                    for="CDKN2A/B">CDKN2A/B:</label>
+                                <div class="col-sm-9">
+                                    <select name="CDKN2A/B" id="CDKN2A/B" class="form-select form-select-sm"
+                                        aria-label="CDKN2A/B">
+                                        <option value="0" selected="">unbekannt</option>
+                                        <option value="1">nicht homozygot deletiert </option>
+                                        <option value="2">homozygot deletiert </option>
+                                    </select>
+                                </div>
+                            </div>
                             <br>
                             <div class="row mb-1">
                                 <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
@@ -1281,9 +1757,8 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Reset</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <input type="reset" class="btn btn-primary" value="Zurücksetzen">
+                            <button type="button" class="btn btn-primary">Speichern</button>
                         </div>
                     </div>
                 </div>
@@ -1410,20 +1885,11 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Reset</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <input type="reset" class="btn btn-primary" value="Zurücksetzen">
+                            <button type="button" class="btn btn-primary">Speichern</button>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section class="container" id="verlauf" style="display:flex; justify-content: center;">
-            <div class="col">
-                <div class="row mb-1">
-                    <h1>Placeholder</h>
-                </div>
-            </div>
             </div>
         </section>
         <section class="container" id="radiotherapie">
@@ -1495,11 +1961,12 @@
                                         <option value=2>Helmfeld</option>
                                         <option value=3>Hintere Schädelgrube </option>
                                         <option value=4>IMRT </option>
-                                        <option value=4>Involved Field </option>
-                                        <option value=4>Neuroachse </option>
-                                        <option value=4>Stereotaxie </option>
-                                        <option value=4>Tumorregion </option>
-                                        <option value=4>Wirbelsäule </option>
+                                        <option value=5>Involved Field </option>
+                                        <option value=6>Neuroachse </option>
+                                        <option value=7>Stereotaxie </option>
+                                        <option value=8>Tumorregion </option>
+                                        <option value=9>Tumorregion + Randsaum </option>
+                                        <option value=10>Wirbelsäule </option>
                                     </select>
                                 </div>
                             </div>
@@ -1522,9 +1989,8 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Reset</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <input type="reset" class="btn btn-primary" value="Zurücksetzen">
+                            <button type="button" class="btn btn-primary">Speichern</button>
                         </div>
                     </div>
                 </div>
@@ -1574,13 +2040,13 @@
                                         class="form-select form-select-sm" aria-label="systemtherapieprotokoll">
                                         <option selected disabled hidden value=0> </option>
                                         <option value=1>ACNU </option>
-                                        <option value=2>BCNU</option>
-                                        <option value=3>CCNU </option>
-                                        <option value=4>Temozolomid </option>
-                                        <option value=5>Procarbazin </option>
-                                        <option value=6>Methotrexat (MTX) </option>
-                                        <option value=7>Cytarabin (Ara-C) </option>
-                                        <option value=8>Vincristin </option>
+                                        <option value=2>CCNU </option>
+                                        <option value=3>Temozolomid </option>
+                                        <option value=4>Procarbazin </option>
+                                        <option value=5>Methotrexat (MTX) </option>
+                                        <option value=6>Cytarabin (Ara-C) </option>
+                                        <option value=7>Vincristin </option>
+                                        <option value=8>PC </option>
                                         <option value=9>PCV </option>
                                     </select>
                                 </div>
@@ -1615,9 +2081,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Reset</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
+                                <input type="reset" class="btn btn-primary" value="Zurücksetzen">
+                                <button type="button" class="btn btn-primary">Speichern</button>
                             </div>
                         </div>
                     </div>
@@ -1647,9 +2112,9 @@
                                 <div class="col-sm-9">
                                     <select name="studiename" id="studiename" class="form-select form-select-sm"
                                         aria-label="Name der Studie">
-                                        <option selected value=0></option>
-                                        <option value=1></option>
-                                        <option value=2></option>
+                                        <option selected value=0 disabled></option>
+                                        <option value=1>MAOT-Reutlingen</option>
+                                        <option value=2>3D-Ultraschall</option>
                                         <option value=3></option>
                                         <option value=4></option>
                                         <option value=5></option>
@@ -1704,14 +2169,20 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Reset</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <input type="reset" class="btn btn-primary" value="Zurücksetzen">
+                            <button type="button" class="btn btn-primary">Speichern</button>
                         </div>
                     </div>
                 </div>
             </div>
-
+        </section>
+        <section class="container" id="verlauf" style="display:flex; justify-content: center;">
+            <div class="col">
+                <div class="row mb-1">
+                    <h1>Placeholder</h>
+                </div>
+            </div>
+            </div>
         </section>
     </main>
     <footer class="footer py-3 bg-light flex-shrink-0 fixed-bottom">
@@ -1769,6 +2240,17 @@
             $('#pdate').text("H-" + date2.getFullYear() + "-");
         });
     });
+
+    $(document).ready(function () {
+        $("#rpathologie").change(function () {
+            if (this.value == 7) {
+                $("#rpathologiesonst").show();
+            } else {
+                $("#rpathologiesonst").hide();
+            }
+        });
+    });
+
 </script>
 
 <!--Aufenthalte:-->
