@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Neuro Onko</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="accordion" id="accordiondiagnostik">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headinghauptdiagnose">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsehauptdiagnose" aria-expanded="true" aria-controls="collapsehauptdiagnose">
+                    Hauptdiagnose
+                </button>
+            </h2>
+            <div id="collapsehauptdiagnose" class="accordion-collapse collapse show"
+                aria-labelledby="headinghauptdiagnose" data-bs-parent="#accordiondiagnostik">
+                <div class="accordion-body">
+                    <div class="row mb-1">
+                        <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                            for="diagnosedatum">Diagnosedatum:</label>
+                        <div class="col-sm-9">
+                            <input type="date" class="form-control  form-control-sm" aria-label="Diagnosedatum"
+                                id="diagnosedatum" name="diagnosedatum" required="">
+                            <div class="invalid-feedback"> Bitte ein Datum wählen / eintragen. </div>
+                        </div>
+                    </div>
+                    <div class="row mb-1">
+                        <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                            for="search-box">Diagnose nach WHO:</label>
+                        <div class="col-sm-9">
+                            <input class="form-control  form-control-sm" type="text" id="search-box" required>
+                            <div id="suggestion-box"></div>
+                            <div id="edaigid"></div>
+                        </div>
+                    </div>
+                    <div class="row mb-1">
+                        <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                            for="betroffeneregion">Betroffene Region:</label>
+                        <div class="col-sm-9">
+                            <select name="betroffeneregion" id="betroffeneregion"
+                                class="form-select form-select-sm" aria-label="Betroffene Region" required>
+                                <option value="0" disabled selected></option>
+                                <optgroup label='Gehirn'>
+                                    <option id='Frontallappen' style="font-weight: bold;">Frontallappen</option>
+                                    <option id='Orbitofrontaler Cortex'>Orbitofrontaler Cortex</option>
+                                    <option id='Prämotorischer Cortex'>Prämotorischer Cortex</option>
+                                    <option id='Gyrus frontalis medius'>Gyrus frontalis medius</option>
+                                    <option id='Gyrus frontalis inferior'>Gyrus frontalis inferior
+                                    </option>
+                                    <option id='Präfrontaler Cortex'>Präfrontaler Cortex</option>
+                                    <option id='Motorcortex'>Motorcortex</option>
+                                    <option id='Broca-Areal'>Broca-Areal</option>
+                                    <option id='Okzipitallappen' style="font-weight: bold;">Okzipitallappen</option>
+                                    <option id='Primärer visueller Cortex'>Primärer visueller Cortex
+                                    </option>
+                                    <option id='Parietallappen' style="font-weight: bold;">Parietallappen</option>
+                                    <option id='Lobulus parietalis inferior'>Lobulus parietalis inferior
+                                    </option>
+                                    <option id='Lobulus parietalis superior'>Lobulus parietalis superior
+                                    </option>
+                                    <option id='Praecuneus'>Praecuneus</option>
+                                    <option id='Somatosensorischer Cortex'>Somatosensorischer Cortex
+                                    </option>
+                                    <option id='Temporallappen' style="font-weight: bold;">Temporallappen</option>
+                                    <option id='Primärer auditiver Cortex'>Primärer auditiver Cortex
+                                    </option>
+                                    <option id='Wernicke-Areal'>Wernicke-Areal</option>
+                                    <option id='Cingulärer Cortex' style="font-weight: bold;">Cingulärer Cortex</option>
+                                    <option id='Hirnhäute' style="font-weight: bold;">Hirnhäute</option>
+                                    <option id='Stammhirn' style="font-weight: bold;">Stammhirn</option>
+                                    <option id='Mittelhirn'>Mittelhirn</option>
+                                    <option id='Pons'>Pons</option>
+                                    <option id='Medulla Oblongata'>Medulla Oblongata</option>
+                                    <option id='Limbisches System' style="font-weight: bold;">Limbisches System</option>
+                                    <option id='Area entorhinalis'>Area entorhinalis</option>
+                                    <option id='Amygdala'>Amygdala</option>
+                                    <option id='Hippocampus'>Hippocampus</option>
+                                    <option id='Subiculum'>Subiculum</option>
+                                    <option id='Gyrus dentatus'>Gyrus dentatus</option>
+                                    <option id='Hypothalamus' style="font-weight: bold;">Hypothalamus</option>
+                                    <option id='Thalamus' style="font-weight: bold;">Thalamus</option>
+                                    <option id='Ventrikel' style="font-weight: bold;">Ventrikel</option>
+                                    <option id='Hypophyse' style="font-weight: bold;">Hypophyse</option>
+                                    <option id='Basalganglien' style="font-weight: bold;">Basalganglien</option>
+                                    <option id='Nucleus caudatus'>Nucleus caudatus</option>
+                                    <option id='Globus pallidus'>Globus pallidus</option>
+                                    <option id='Nucleus accumbens'>Nucleus accumbens</option>
+                                    <option id='Putamen'>Putamen</option>
+                                    <option id='Substantia nigra'>Substantia nigra</option>
+                                    <option id='Nucleus subthalamicus'>Nucleus subthalamicus</option>
+                                    <option id='Cerebellum' style="font-weight: bold;">Cerebellum</option>
+                                    <option id='Corpus Callosum' style="font-weight: bold;">Corpus Callosum</option>
+                                    <option id='Bulbus olfactorius' style="font-weight: bold;">Bulbus olfactorius</option>
+                                    <optgroup label="&nbsp; Hirnnerven">
+                                    <option id='Hirnnerv I Olfactorius'>Hirnnerv I Olfactorius</option>
+                                    <option id='Hirnnerv II Opticus'>Hirnnerv II Opticus</option>
+                                    <option id='Hirnnerv III Oculomotorius'>Hirnnerv III Oculomotorius
+                                    </option>
+                                    <option id='Hirnnerv IV Trochlearis'>Hirnnerv IV Trochlearis
+                                    </option>
+                                    <option id='Hirnnerv V Trigeminus'>Hirnnerv V Trigeminus</option>
+                                    <option id='Hirnnerv VI Abducens'>Hirnnerv VI Abducens</option>
+                                    <option id='Hirnnerv VII Facialis'>Hirnnerv VII Facialis</option>
+                                    <option id='Hirnnerv VIII Vestibulocochlearis'>Hirnnerv VIII
+                                        Vestibulocochlearis</option>
+                                    <option id='Hirnnerv IX Glossopharyngeus'>Hirnnerv IX
+                                        Glossopharyngeus</option>
+                                    <option id='Hirnnerv X Vagus'>Hirnnerv X Vagus</option>
+                                    <option id='Hirnnerv XI Accessorius'>Hirnnerv XI Accessorius
+                                    </option>
+                                    <option id='Hirnnerv XII Hypoglossus'>Hirnnerv XII Hypoglossus
+                                    </option>
+                                </optgroup>
+                                </optgroup>
+                                <optgroup label='Wirbelsäule'>
+                                <optgroup label='&nbsp; Halswirbelsäule'>
+                                    <option id='C1'>C1</option>
+                                    <option id='C2'>C2</option>
+                                    <option id='C3'>C3</option>
+                                    <option id='C4'>C4</option>
+                                    <option id='C5'>C5</option>
+                                    <option id='C6'>C6</option>
+                                    <option id='C7'>C7</option>
+                                </optgroup>
+                                <optgroup label='&nbsp; Brustwirbelsäule'>
+                                    <option id='T1'>T1</option>
+                                    <option id='T2'>T2</option>
+                                    <option id='T3'>T3</option>
+                                    <option id='T4'>T4</option>
+                                    <option id='T5'>T5</option>
+                                    <option id='T6'>T6</option>
+                                    <option id='T7'>T7</option>
+                                    <option id='T8'>T8</option>
+                                    <option id='T9'>T9</option>
+                                    <option id='T10'>T10</option>
+                                    <option id='T11'>T11</option>
+                                    <option id='T12'>T12</option>
+                                </optgroup>
+                                <optgroup label='&nbsp; Lendenwirbelsäule'>
+                                    <option id='L1'>L1</option>
+                                    <option id='L2'>L2</option>
+                                    <option id='L3'>L3</option>
+                                    <option id='L4'>L4</option>
+                                    <option id='L5'>L5</option>
+                                    <option id='Sacrum' style="font-weight: bold;">Sacrum</option>
+                                </optgroup>
+                            </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-1 d-flex align-items-center">
+                        <label
+                            class="radio control-label col-sm-3 col-form-label col-form-label-sm">Seite:</label>
+                        <div class="col-sm-9">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="diagnoseseite"
+                                    id="diagnoseseiterechts" value="0">
+                                <label class="form-check-label" for="diagnoseseiterechts">rechts</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="diagnoseseite"
+                                    id="diagnoseseitelinks" value="1">
+                                <label class="form-check-label" for="diagnoseseitelinks">links</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="diagnoseseite"
+                                    id="diagnoseseitebeidseits" value="2">
+                                <label class="form-check-label" for="diagnoseseitebeidseits">beidseits</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="diagnoseseite"
+                                    id="diagnoseseiteirrelevant" value="3">
+                                <label class="form-check-label" for="diagnoseseiteirrelevant">irrelevant</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-1">
+                        <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="diagnoseart">Art
+                            der Diagnose:</label>
+                        <div class="col-sm-9">
+                            <select name="diagnoseart" id="diagnoseart" class="form-select form-select-sm"
+                                aria-label="Art der Diagnose">
+                                <option value=0>unbekannt </option>
+                                <option value=1>Primärfall </option>
+                                <option value=2>Erstkarzinom außerhalb der Primärfalldefinition </option>
+                                <option value=3>Rezidiv</option>
+                                <option value=4>Lokoregionäre Metastase </option>
+                                <option value=5>Fernmetastase </option>
+                            </select>
+                        </div>
+                    </div>
+                   <div class="row mb-1 d-flex align-items-center">
+                        <label class="radio control-label col-sm-3 col-form-label col-form-label-sm">Extern durchgeführt:</label>
+                        <div class="col-sm-9">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="diagnoseextern"
+                                    id="diagnoseexternunbekannt" value="0" checked="">
+                                <label class="form-check-label" for="diagnoseexternunbekannt">unbekannt</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="diagnoseextern" id="diagnoseexternnein"
+                                    value="1">
+                                <label class="form-check-label" for="diagnoseexternnein">nein</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="diagnoseextern" id="diagnoseexternja"
+                                    value="2">
+                                <label class="form-check-label" for="diagnoseexternja">ja</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-1">
+                        <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                            for="diagnosebemerkung">Bemerkung:</label>
+                        <div class="col-sm-9">
+                            <textarea name="diagnosebemerkung" maxlength=600 rows="7"
+                                class="form-control form-control-sm" id="diagnosebemerkung"
+                                style="resize: none;"></textarea>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingnebendiagnose">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsenebendiagnose" aria-expanded="true" aria-controls="collapsenebendiagnose">
+                    Nebendiagnose
+                </button>
+            </h2>
+            <div id="collapsenebendiagnose" class="accordion-collapse collapse" aria-labelledby="headingnebendiagnose"
+                data-bs-parent="#accordiondiagnostik">
+                <div class="accordion-body">
+
+
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingallergie">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseallergie" aria-expanded="true" aria-controls="collapseallergie">
+                    Allergien
+                </button>
+            </h2>
+            <div id="collapseallergie" class="accordion-collapse collapse" aria-labelledby="headingallergie"
+                data-bs-parent="#accordiondiagnostik">
+                <div class="accordion-body">
+
+
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingmundm">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsemundm" aria-expanded="true" aria-controls="collapsemundm">
+                    M&M
+                </button>
+            </h2>
+            <div id="collapsemundm" class="accordion-collapse collapse" aria-labelledby="headingmundm"
+                data-bs-parent="#accordiondiagnostik">
+                <div class="accordion-body">
+
+
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingmedikation">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsemedikation" aria-expanded="true" aria-controls="collapsemedikation">
+                    Medikation
+                </button>
+            </h2>
+            <div id="collapsemedikation" class="accordion-collapse collapse" aria-labelledby="headingmedikation"
+                data-bs-parent="#accordiondiagnostik">
+                <div class="accordion-body">
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/form-validation.js"></script>
+</body>
+
+</html>
