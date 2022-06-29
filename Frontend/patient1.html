@@ -2651,7 +2651,8 @@
                                 <label style class="sr-only col-sm-3 col-form-label col-form-label-sm"
                                     for="entlassen">Bereits entlassen:</label>
                                 <div class="col-sm-9">
-                                    <input type="checkbox" aria-label="entlassen" id="entlassen" name="entlassen">
+                                    <input type="checkbox" aria-label="entlassen" id="entlassen" name="entlassen"
+                                        checked>
                                 </div>
                             </div>
                             <div class="row mb-1">
@@ -2748,11 +2749,11 @@
                                 </div>
                             </div>
                             <div class="row mb-1">
-                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
-                                    for="radiozeitraum">Zeitraum der Behandlung:</label>
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="radiophase">Phase
+                                    der Behandlung:</label>
                                 <div class="col-sm-9">
-                                    <select name="radiozeitraum" id="radiozeitraum" class="form-select form-select-sm"
-                                        aria-label="Zeitraum der Behandlung">
+                                    <select name="radiophase" id="radiophase" class="form-select form-select-sm"
+                                        aria-label="Phase der Behandlung">
                                         <option selected value=0 disable hidden> </option>
                                         <option value=1>Adjuvant </option>
                                         <option value=2>Neoadjuvant</option>
@@ -2783,7 +2784,7 @@
                                 <div class="col-sm-9">
                                     <select name="radiotechnik" id="radiotechnik" class="form-select form-select-sm"
                                         aria-label="Technik">
-                                        <option selected value=0 disabled hidden> </option>
+                                        <option selected value=0>unbekannt </option>
                                         <option value=1>2D </option>
                                         <option value=2>3D</option>
                                         <option value=3>IMRT </option>
@@ -2963,118 +2964,151 @@
                             </div>
                             <div class="row mb-1">
                                 <label class="sr-only col-sm-3 col-form-label col-form-label-sm "
-                                    for="systemtherapiedosis">Dosis:</label>
+                                    for="dosisacnu1">Dosis:</label>
                                 <div class="col-sm">
                                     <div class="input-group input-group-sm">
                                         <input type="number" class="form-control form-control-sm"
-                                            aria-label="systemtherapiedosis" id="systemtherapiedosis"
-                                            name="systemtherapiedosis">
+                                            aria-label="dosisacnu1" id="dosisacnu1" name="dosisacnu1">
                                         <span class="input-group-text">mg/m<sup>2</sup></span>
                                     </div>
                                 </div>
-                            </div>
-                            <br>
-                            <br>
-                            <div class="row mb-1">
-                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
-                                    for="chemozeitraum">Zeitraum der Behandlung:</label>
-                                <div class="col-sm-9">
-                                    <select name="chemozeitraum" id="chemozeitraum" class="form-select form-select-sm"
-                                        aria-label="Zeitraum der Behandlung">
-                                        <option selected value=0 disable hidden> </option>
-                                        <option value=1>Adjuvant </option>
-                                        <option value=2>Neoadjuvant</option>
-                                        <option value=3>Palliativ </option>
-                                        <option value=4>Ohne OP</option>
-                                        <option value=5>Andere </option>
-                                    </select>
+
+                                <div class="row mb-1 justify-content-end">
+                                    <div class="col-sm-9 ">
+                                        <div class="input-group input-group-sm">
+                                            <input type="number" class="form-control form-control-sm"
+                                                aria-label="dosisccnu1" id="dosisccnu1" name="dosisccnu1">
+                                            <span class="input-group-text">mg/m<sup>2</sup></span>
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+
+
+
+                                </div>
+                                <br>
+                                <br>
+                                <div class="row mb-1">
+                                    <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                        for="chemophase">Phase der Behandlung:</label>
+                                    <div class="col-sm-9">
+                                        <select name="chemophase" id="chemophase" class="form-select form-select-sm"
+                                            aria-label="Phase der Behandlung">
+                                            <option selected value=0 disable hidden> </option>
+                                            <option value=1>Adjuvant </option>
+                                            <option value=2>Neoadjuvant</option>
+                                            <option value=3>Intraoperativ </option>
+                                            <option value=4>Ohne OP</option>
+                                            <option value=5>Andere </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-1">
+                                    <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                        for="chemointention">Intention:</label>
+                                    <div class="col-sm-9">
+                                        <select name="chemointention" id="chemointention"
+                                            class="form-select form-select-sm" aria-label="Intention">
+                                            <option selected value=0>unbekannt </option>
+                                            <option value=1>Kurativ </option>
+                                            <option value=2>Palliativ</option>
+                                            <option value=3>Prophylaktisch </option>
+                                            <option value=4>Definitiv</option>
+                                            <option value=5>Andere </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-1">
+                                    <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                        for="chemoverfahren">Verfahren:</label>
+                                    <div class="col-sm-9">
+                                        <select name="chemoverfahren" id="chemoverfahren"
+                                            class="form-select form-select-sm" aria-label="Verfahren">
+                                            <option selected value=0>unbekannt </option>
+                                            <option value=1>Druck Aerosol (PIPAC) </option>
+                                            <option value=2>Hypertherm Intraperitoneal (HIPEC) </option>
+                                            <option value=3>Hypertherm Intrathorakal (HITOC) </option>
+                                            <option value=4>Instillationstherapie </option>
+                                            <option value=5>Intraperitoneal </option>
+                                            <option value=6>Intravesikal </option>
+                                            <option value=7>Andere </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-1">
+                                    <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                        for="chemoecogvorbeginn">ECOG vor Beginn:</label>
+                                    <div class="col-sm-9">
+                                        <select name="chemoecogvorbeginn" id="chemoecogvorbeginn"
+                                            class="form-select form-select-sm" aria-label="ECOG vor Beginn">
+                                            <option selected value=0>unbekannt </option>
+                                            <option value=1>0 - Volle Aktivität, normales Leben möglich</option>
+                                            <option value=2>1 - Eingeschränkte Aktivität, leichte Arbeit möglich
+                                            </option>
+                                            <option value=3>2 - bis 50% der Tageszeit ruhebedürftig </option>
+                                            <option value=4>3 - Mehr als 50% der Tageszeit ruhebedürftig </option>
+                                            <option value=5>4 - Bettlägerig und völlig pflegebedürftig </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-1">
+                                    <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                        for="chemoansprechen">Ansprechen der Therapie:</label>
+                                    <div class="col-sm-9">
+                                        <select name="chemoansprechen" id="chemoansprechen"
+                                            class="form-select form-select-sm" aria-label="Ansprechen der Therapie">
+                                            <option value=0 selected>unbekannt </option>
+                                            <option value=1>Complete Response </option>
+                                            <option value=2>Partial Response </option>
+                                            <option value=3>Progressive Disease </option>
+                                            <option value=4>Stable Disease </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-1">
+                                    <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                        for="chemokomplikationen">Komplikationen:</label>
+                                    <div class="col-sm-9">
+                                        <select name="chemokomplikationen" id="chemokomplikationen"
+                                            class="form-select form-select-sm" aria-label="Komplikationen">
+                                            <option selected value=0>Keine </option>
+                                            <option value=1>Fieber ohne stationären Aufenthalt </option>
+                                            <option value=2>Fieber mit stationären Aufenthalt</option>
+                                            <option value=3>Adverse Event mit Todesfall (CTC 5) </option>
+                                            <option value=4>Andere </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-1">
+                                    <label style class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                        for="radioextern">Extern:</label>
+                                    <div class="col-sm-9">
+                                        <input type="checkbox" aria-label="Radiotherapie extern" id="radiotherapie"
+                                            name="radiotherapie">
+                                    </div>
+                                </div>
+                                <div class="row mb-1">
+                                    <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                        for="radiobemerkung">Bemerkung:</label>
+                                    <div class="col-sm-9">
+                                        <textarea name="radiobemerkung" maxlength=600 rows="7"
+                                            class="form-control form-control-sm" id="radiobemerkung"
+                                            style="resize: none;"></textarea>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row mb-1">
-                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
-                                    for="chemoverfahren">Verfahren:</label>
-                                <div class="col-sm-9">
-                                    <select name="chemoverfahren" id="chemoverfahren" class="form-select form-select-sm"
-                                        aria-label="Verfahren">
-                                        <option selected value=0>unbekannt </option>
-                                        <option value=1>Druck Aerosol (PIPAC) </option>
-                                        <option value=2>Hypertherm Intraperitoneal (HIPEC) </option>
-                                        <option value=3>Hypertherm Intrathorakal (HITOC) </option>
-                                        <option value=4>Instillationstherapie </option>
-                                        <option value=5>Intraperitoneal </option>
-                                        <option value=6>Intravesikal </option>
-                                        <option value=7>Andere </option>
-                                    </select>
-                                </div>
+                            <div class="modal-footer">
+                                <input type="reset" class="btn btn-primary" value="Zurücksetzen">
+                                <button type="button" class="btn btn-primary">Speichern</button>
                             </div>
-                            <div class="row mb-1">
-                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
-                                    for="chemoecogvorbeginn">ECOG vor Beginn:</label>
-                                <div class="col-sm-9">
-                                    <select name="chemoecogvorbeginn" id="chemoecogvorbeginn"
-                                        class="form-select form-select-sm" aria-label="ECOG vor Beginn">
-                                        <option selected value=0>unbekannt </option>
-                                        <option value=1>0 - Volle Aktivität, normales Leben möglich</option>
-                                        <option value=2>1 - Eingeschränkte Aktivität, leichte Arbeit möglich </option>
-                                        <option value=3>2 - bis 50% der Tageszeit ruhebedürftig </option>
-                                        <option value=4>3 - Mehr als 50% der Tageszeit ruhebedürftig </option>
-                                        <option value=5>4 - Bettlägerig und völlig pflegebedürftig </option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row mb-1">
-                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
-                                    for="chemoansprechen">Ansprechen der Therapie:</label>
-                                <div class="col-sm-9">
-                                    <select name="chemoansprechen" id="chemoansprechen"
-                                        class="form-select form-select-sm" aria-label="Ansprechen der Therapie">
-                                        <option value=0 selected>unbekannt </option>
-                                        <option value=1>Complete Response </option>
-                                        <option value=2>Partial Response </option>
-                                        <option value=3>Progressive Disease </option>
-                                        <option value=4>Stable Disease </option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row mb-1">
-                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
-                                    for="chemokomplikationen">Komplikationen:</label>
-                                <div class="col-sm-9">
-                                    <select name="chemokomplikationen" id="chemokomplikationen" class="form-select form-select-sm"
-                                        aria-label="Komplikationen">
-                                        <option selected value=0>Keine </option>
-                                        <option value=1>Fieber ohne stationären Aufenthalt </option>
-                                        <option value=2>Fieber mit stationären Aufenthalt</option>
-                                        <option value=3>Adverse Event mit Todesfall (CTC 5) </option>
-                                         <option value=4>Andere </option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row mb-1">
-                                <label style class="sr-only col-sm-3 col-form-label col-form-label-sm"
-                                    for="radioextern">Extern:</label>
-                                <div class="col-sm-9">
-                                    <input type="checkbox" aria-label="Radiotherapie extern" id="radiotherapie"
-                                        name="radiotherapie">
-                                </div>
-                            </div>
-                            <div class="row mb-1">
-                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
-                                    for="radiobemerkung">Bemerkung:</label>
-                                <div class="col-sm-9">
-                                    <textarea name="radiobemerkung" maxlength=600 rows="7"
-                                        class="form-control form-control-sm" id="radiobemerkung"
-                                        style="resize: none;"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <input type="reset" class="btn btn-primary" value="Zurücksetzen">
-                            <button type="button" class="btn btn-primary">Speichern</button>
                         </div>
                     </div>
                 </div>
-            </div>
 
 
 
