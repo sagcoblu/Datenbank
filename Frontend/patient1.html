@@ -453,6 +453,155 @@
         </section>
         <section class="container" id="diagnosen">
 
+            <div class="container">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <h3 style="text-align: center;">Hauptdiagnose</h3>
+                    <table class="table table-striped table-hover mt-2" id="hauptdiagnosetable">
+                        <thead>
+                            <tr>
+                                <th scope="col">Parameter 1</th>
+                                <th scope="col">Parameter 2</th>
+                                <th scope="col">Parameter 3</th>
+                            </tr>
+                        </thead>
+                        <tbody id="hauptdiagnosetable">
+                            <tr>
+                                <td> Wert 1</td>
+                                <td> Wert 2</td>
+                                <td> Wert 3</td>
+                            </tr>
+                            <tr>
+                                <td> Wert 1</td>
+                                <td> Wert 2</td>
+                                <td> Wert 3</td>
+                            </tr>
+                            <tr>
+                                <td> Wert 1</td>
+                                <td> Wert 2</td>
+                                <td> Wert 3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="row pb-5">
+                      <div class="col-8 col-sm-6">
+                        <h3 style="text-align: center;">Nebendiagnose</h3>
+                    <table class="table table-striped table-hover mt-2" id="nebendiagnosetable">
+                        <thead>
+                            <tr>
+                                <th scope="col">Parameter 1</th>
+                                <th scope="col">Parameter 2</th>
+                                <th scope="col">Parameter 3</th>
+                            </tr>
+                        </thead>
+                        <tbody id="nebendiagnosetable">
+                            <tr>
+                                <td> Wert 1</td>
+                                <td> Wert 2</td>
+                                <td> Wert 3</td>
+                            </tr>
+                            <tr>
+                                <td> Wert 1</td>
+                                <td> Wert 2</td>
+                                <td> Wert 3</td>
+                            </tr>
+                            <tr>
+                                <td> Wert 1</td>
+                                <td> Wert 2</td>
+                                <td> Wert 3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                      </div>
+                      <div class="col-4 col-sm-6">
+                        <h3 style="text-align: center;">Allergie</h3>
+                        <table class="table table-striped table-hover mt-2" id="allergietable">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Parameter 1</th>
+                                    <th scope="col">Parameter 2</th>
+                                </tr>
+                            </thead>
+                            <tbody id="allergietable">
+                                <tr>
+                                    <td> Wert 1</td>
+                                    <td> Wert 2</td>
+                                </tr>
+                                <tr>
+                                    <td> Wert 1</td>
+                                    <td> Wert 2</td>
+                                </tr>
+                                <tr>
+                                    <td> Wert 1</td>
+                                    <td> Wert 2</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8 col-sm-6">
+                            <h3 style="text-align: center;">Komplikationen</h3>
+                            <table class="table table-striped table-hover mt-2" id="komplikationentable">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Parameter 1</th>
+                                        <th scope="col">Parameter 2</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="komplikationentable">
+                                    <tr>
+                                        <td> Wert 1</td>
+                                        <td> Wert 2</td>
+                                    </tr>
+                                    <tr>
+                                        <td> Wert 1</td>
+                                        <td> Wert 2</td>
+                                    </tr>
+                                    <tr>
+                                        <td> Wert 1</td>
+                                        <td> Wert 2</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-4 col-sm-6">
+                            <h3 style="text-align: center;">Medikation</h3>
+                            <table class="table table-striped table-hover mt-2" id="medikationtable">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Parameter 1</th>
+                                        <th scope="col">Parameter 2</th>
+                                        <th scope="col">Parameter 3</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="medikationtable">
+                                    <tr>
+                                        <td> Wert 1</td>
+                                        <td> Wert 2</td>
+                                        <td> Wert 3</td>
+                                    </tr>
+                                    <tr>
+                                        <td> Wert 1</td>
+                                        <td> Wert 2</td>
+                                        <td> Wert 3</td>
+                                    </tr>
+                                    <tr>
+                                        <td> Wert 1</td>
+                                        <td> Wert 2</td>
+                                        <td> Wert 3</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
 
             <div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle float-end" type="button" id="dropdowndiagnosen"
@@ -804,6 +953,7 @@
                                     <input class="form-control  form-control-sm" type="text" id="allergiesuche"
                                         required>
                                     <div id="allergiesuggestion-box"></div>
+                                    <!-- <option>neu...</option><option value="20">Arcoxia</option><option value="23">ASDF</option><option value="1">ass</option><option value="4">Carbamazepin</option><option value="16">Ciprofloxacin</option><option value="17">Diclofenac</option><option value="15">Doxycyclin</option><option value="7">Erdbeeren</option><option value="10">Heparin</option><option value="8">iodhaltiges Kontrastmittel</option><option value="6">Kontrastmittel</option><option value="11">Latex</option><option value="9">Levetiracetam</option><option value="13">Mehl</option><option value="3">Nickel</option><option value="18">Nitrate</option><option value="22">Paracetamol</option><option value="2">Penicillin-Unverträglichkeit</option><option value="5">Phenytoin</option><option value="19">Simvastatin</option><option value="14">Temozolomid</option><option value="21">Tramadol</option><option value="12">xyz</option>-->
                                     <div id="allergieedaigid"></div>
                                 </div>
                             </div>
@@ -850,6 +1000,7 @@
                                     <input class="form-control  form-control-sm" type="text" id="komplikationsuche"
                                         required>
                                     <div id="komplikationsuggestion-box"></div>
+                                    <!--<option></option><option value="24">iatrogene LAE</option><option value="23">iatrogene Thrombose</option><option value="17">intestinale Blutung bei Myelotoxizität</option><option value="8">Liquordrainage bei Liquorleck</option><option value="7">Liquorleck</option><option value="1">Nachblutung</option><option value="12">neutropenes Fieber</option><option value="18">occulte Blutung bei Myelotoxizität</option><option value="9">Operation bei Liquorleck</option><option value="2">Operation bei Nachblutung</option><option value="5">Operation bei Wundinfektion</option><option value="19">PC-Pneumonie bei Myelotoxizität</option><option value="16">petechiale Blutung bei Myelotoxizität</option><option value="27">schwere radiogene Hauttoxizität </option><option value="26">schwere radiogene Kopfschmerzen</option><option value="25">schweres radiogenes Ödem mit klin. Verschlechterung</option><option value="13">Sepsis bei Myelotoxitzität</option><option value="15">sonstige Infektionen bei Myelozoxizität</option><option value="10">sonstige Liquorzirkulationsstörung</option><option value="21">sonstige toxische Leberfunktionsstörung</option><option value="11">Tod durch Liquorzirkulationsstörung</option><option value="3">Tod durch Nachblutung</option><option value="28">Tod durch radiogenes Ödem</option><option value="29">Tod durch Radionekrose</option><option value="14">Tod durch Sepsis bei Myelotoxizität</option><option value="22">Tod durch toxische Leberfunktionsstörung</option><option value="6">Tod durch Wundinfektion</option><option value="20">toxische Hepatitis</option><option value="4">Wundinfektion</option>-->
                                     <div id="komplikationedaigid"></div>
                                 </div>
                             </div>
@@ -2315,46 +2466,57 @@
                     </tr>
                 </tbody>
             </table>
-            <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal"
-                data-bs-target="#modalhistologie">
-                Histologie anlegen
-            </button>
-            <div class="modal fade" id="modalhistologie" tabindex="-1" aria-labelledby="modalhistologieLabel"
-                aria-hidden="true" data-bs-backdrop="static">
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle float-end" type="button" id="dropdownhistologie"
+                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Histologie anlegen</button>
+                <div class="dropdown-menu" aria-labelledby="dropdownhistologie">
+                    <button type="button" class="dropdown-item" data-bs-toggle="modal"
+                        data-bs-target="#modalhistologieintern"> Hausintern </button>
+                    <button type="button" class="dropdown-item" data-bs-toggle="modal"
+                        data-bs-target="#modalhistologieextern"> Extern </button>
+                </div>
+            </div>
+
+
+
+
+            <div class="modal fade" id="modalhistologieintern" tabindex="-1"
+                aria-labelledby="modalhistologiehausinternLabel" aria-hidden="true" data-bs-backdrop="static">
                 <div class="modal-dialog modal-lg modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="modalhistologieLabel">Histologie anlegen:</h5>
+                            <h5 class="modal-title" id="modalhistologieinternLabel">Hausinterne Histologie anlegen:
+                            </h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <div class="row mb-1">
                                 <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
-                                    for="pdatum">Pathologiedatum:</label>
+                                    for="pdatumintern">Pathologiedatum:</label>
                                 <div class="col-sm-9">
-                                    <input type="date" class="form-control  form-control-sm" aria-label="pdatum"
-                                        id="pdatum" name="pdatum" required="">
+                                    <input type="date" class="form-control  form-control-sm" aria-label="pdatumintern"
+                                        id="pdatumintern" name="pdatumintern" required="">
                                     <div class="invalid-feedback"> Bitte ein Datum wählen / eintragen. </div>
                                 </div>
                             </div>
                             <div class="row mb-1">
                                 <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
-                                    for="enummer">Einsendenummer:</label>
+                                    for="enummerintern">Einsendenummerintern:</label>
                                 <div class="col-sm-9">
                                     <div class="input-group input-group-sm">
                                         <span class="input-group-text" id="pdate">H-</span>
-                                        <input type="text" class="form-control form-control-sm" aria-label="enummer"
-                                            id="enummer" name="enummer">
+                                        <input type="text" class="form-control form-control-sm"
+                                            aria-label="enummerintern" id="enummerintern" name="enummerintern">
                                     </div>
                                 </div>
                             </div>
                             <div class="row mb-1">
                                 <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
-                                    for="probenart">Probenart:</label>
+                                    for="probenartintern">Probenart:</label>
                                 <div class="col-sm-9">
-                                    <select name="probenart" id="probenart" class="form-select form-select-sm"
-                                        aria-label="Probenart">
-                                        <option selected="" value="0">Resektat </option>
+                                    <select name="probenartintern" id="probenartintern"
+                                        class="form-select form-select-sm" aria-label="Probenart">
+                                        <option selected value="0">Resektat </option>
                                         <option value="1">Biopsie </option>
                                         <option value="2">Zytologie </option>
                                     </select>
@@ -2362,10 +2524,10 @@
                             </div>
                             <div class="row mb-1">
                                 <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
-                                    for="probenart">Befundet von:</label>
+                                    for="befundetvonintern">Befundet von:</label>
                                 <div class="col-sm-9">
-                                    <select name="befundetvon" id="befundetvon" class="form-select form-select-sm"
-                                        aria-label="Befundet">
+                                    <select name="befundetvonintern" id="befundetvonintern"
+                                        class="form-select form-select-sm" aria-label="befundetvonintern">
                                         <option value="0" selected>unbekannt </option>
                                         <option value="1">Dr. Ágnes Csanádi </option>
                                         <option value="2">Dr. med. Uta Diergardt </option>
@@ -2386,10 +2548,78 @@
                             </div>
                             <div class="row mb-1">
                                 <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
-                                    for="probenart">Referenzpathologie:</label>
+                                    for="morphologischebegutachtungintern">Morphologische Begutachtung:</label>
                                 <div class="col-sm-9">
-                                    <select name="rpathologie" id="rpathologie" class="form-select form-select-sm"
-                                        aria-label="Referenzpathologie">
+                                    <textarea name="morphologischebegutachtungintern" maxlength="600" rows="9"
+                                        class="form-control form-control-sm" id="morphologischebegutachtungintern"
+                                        style="resize: none;"
+                                        placeholder="Morphologische Begutachtung des hausinternen Pathologiebefunds"></textarea>
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                    for="kommentarintern">Kommentar:</label>
+                                <div class="col-sm-9">
+                                    <textarea name="kommentarintern" maxlength="600" rows="3"
+                                        class="form-control form-control-sm" id="kommentarintern" style="resize: none;"
+                                        placeholder="Kommentar des hausinternen Pathologiebefunds"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="reset" class="btn btn-primary" value="Zurücksetzen">
+                            <button type="button" class="btn btn-primary">Speichern</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="modal fade" id="modalhistologieextern" tabindex="-1"
+                aria-labelledby="modalhistologieexternLabel" aria-hidden="true" data-bs-backdrop="static">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalhistologieexternLabel">Externe Histologie anlegen:
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                    for="pdatumextern">Pathologiedatum:</label>
+                                <div class="col-sm-9">
+                                    <input type="date" class="form-control  form-control-sm" aria-label="pdatumextern"
+                                        id="pdatumextern" name="pdatumextern" required="">
+                                    <div class="invalid-feedback"> Bitte ein Datum wählen / eintragen. </div>
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                    for="enummerextern">Einsendenummerextern:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control form-control-sm" aria-label="enummerextern"
+                                        id="enummerextern" name="enummerextern">
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                    for="probenartextern">probenartextern:</label>
+                                <div class="col-sm-9">
+                                    <select name="probenartextern" id="probenartextern"
+                                        class="form-select form-select-sm" aria-label="probenartextern">
+                                        <option selected value="0">Resektat </option>
+                                        <option value="1">Biopsie </option>
+                                        <option value="2">Zytologie </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                    for="durchführendestelle">Durchführende Stelle:</label>
+                                <div class="col-sm-9">
+                                    <select name="durchführendestelle" id="durchführendestelle"
+                                        class="form-select form-select-sm" aria-label="Durchführende Stelle">
                                         <option value="0" selected="">nicht durchgeführt </option>
                                         <option value="1">unbekannt </option>
                                         <option value="2">Tübingen </option>
@@ -2398,17 +2628,6 @@
                                         <option value="6">Hamburg </option>
                                         <option value="7">Sonstige </option>
                                     </select>
-                                </div>
-                            </div>
-                            <div class="row mb-1">
-                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
-                                    for="rpathologiesonst"></label>
-                                <div class="col-sm-9">
-                                    <div class="input-group input-group-sm">
-                                        <input type="text" class="form-control form-control-sm"
-                                            aria-label="rpathologiesonst" id="rpathologiesonst" name="rpathologiesonst"
-                                            placeholder="Sonstige Referenzpathologie" style="display: none;">
-                                    </div>
                                 </div>
                             </div>
                             <br>
@@ -2525,13 +2744,12 @@
                             <br>
                             <div class="row mb-1">
                                 <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
-                                    for="Details">Details:</label>
+                                    for="bemerkungpathoextern">Details:</label>
                                 <div class="col-sm-9">
-                                    <textarea name="details" maxlength="600" rows="7"
-                                        class="form-control form-control-sm" id="details" style="resize: none;"
-                                        onfocus="this.placeholder = ''"
-                                        placeholder="Beschreibung oder Bemerkung zum Pathologiebefund"
-                                        onblur="this.placeholder = 'Beschreibung oder Bemerkung zum Pathologiebefund'"></textarea>
+                                    <textarea name="bemerkungpathoextern" maxlength="600" rows="7"
+                                        class="form-control form-control-sm" id="bemerkungpathoextern"
+                                        style="resize: none;"
+                                        placeholder="Beschreibung oder Bemerkung zum Pathologiebefund"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -2541,7 +2759,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+
+
+
         </section>
         <section class="container flex-shrink-0" id="aufenthalte">
             <table class="table table-striped table-hover mt-2" id="tableaufenthalte">
@@ -2708,27 +2928,6 @@
                                 </div>
                             </div>
                             <div class="row mb-1">
-                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm "
-                                    for="einzeldosis">Einzeldosis:</label>
-                                <div class="col-sm">
-                                    <div class="input-group input-group-sm">
-                                        <input type="number" class="form-control form-control-sm"
-                                            aria-label="einzeldosis" id="einzeldosis" name="einzeldosis">
-                                        <span class="input-group-text">Gy</span>
-                                    </div>
-                                </div>
-
-                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm text-end"
-                                    for="gesamtdosis">Gesamtdosis:</label>
-                                <div class="col-sm">
-                                    <div class="input-group input-group-sm">
-                                        <input type="number" class="form-control form-control-sm"
-                                            aria-label="gesamtdosis" id="gesamtdosis" name="gesamtdosis">
-                                        <span class="input-group-text">Gy</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mb-1">
                                 <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
                                     for="zielvolumen">Zielvolumen:</label>
                                 <div class="col-sm-9">
@@ -2799,6 +2998,27 @@
                                         <option value=12>Schwerionen </option>
                                         <option value=13>Sonstige Technik </option>
                                     </select>
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm "
+                                    for="einzeldosis">Einzeldosis:</label>
+                                <div class="col-sm">
+                                    <div class="input-group input-group-sm">
+                                        <input type="number" class="form-control form-control-sm"
+                                            aria-label="einzeldosis" id="einzeldosis" name="einzeldosis">
+                                        <span class="input-group-text">Gy</span>
+                                    </div>
+                                </div>
+
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm text-end"
+                                    for="gesamtdosis">Gesamtdosis:</label>
+                                <div class="col-sm">
+                                    <div class="input-group input-group-sm">
+                                        <input type="number" class="form-control form-control-sm"
+                                            aria-label="gesamtdosis" id="gesamtdosis" name="gesamtdosis">
+                                        <span class="input-group-text">Gy</span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row mb-1 d-flex align-items-center">
@@ -2966,149 +3186,193 @@
                                 <label class="sr-only col-sm-3 col-form-label col-form-label-sm "
                                     for="dosisacnu1">Dosis:</label>
                                 <div class="col-sm">
-                                    <div class="input-group input-group-sm">
+                                    <div class="input-group input-group-sm" id="dosisacnu1">
                                         <input type="number" class="form-control form-control-sm"
-                                            aria-label="dosisacnu1" id="dosisacnu1" name="dosisacnu1">
+                                            aria-label="dosisacnu1" id="dosisacnu1" name="dosisacnu1"
+                                            placeholder="Dosis ACNU">
                                         <span class="input-group-text">mg/m<sup>2</sup></span>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="row mb-1 justify-content-end">
-                                    <div class="col-sm-9 ">
-                                        <div class="input-group input-group-sm">
-                                            <input type="number" class="form-control form-control-sm"
-                                                aria-label="dosisccnu1" id="dosisccnu1" name="dosisccnu1">
-                                            <span class="input-group-text">mg/m<sup>2</sup></span>
-                                        </div>
-                                    </div>
-
-
-
-
-
-
-
-
-
-                                </div>
-                                <br>
-                                <br>
-                                <div class="row mb-1">
-                                    <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
-                                        for="chemophase">Phase der Behandlung:</label>
-                                    <div class="col-sm-9">
-                                        <select name="chemophase" id="chemophase" class="form-select form-select-sm"
-                                            aria-label="Phase der Behandlung">
-                                            <option selected value=0 disable hidden> </option>
-                                            <option value=1>Adjuvant </option>
-                                            <option value=2>Neoadjuvant</option>
-                                            <option value=3>Intraoperativ </option>
-                                            <option value=4>Ohne OP</option>
-                                            <option value=5>Andere </option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row mb-1">
-                                    <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
-                                        for="chemointention">Intention:</label>
-                                    <div class="col-sm-9">
-                                        <select name="chemointention" id="chemointention"
-                                            class="form-select form-select-sm" aria-label="Intention">
-                                            <option selected value=0>unbekannt </option>
-                                            <option value=1>Kurativ </option>
-                                            <option value=2>Palliativ</option>
-                                            <option value=3>Prophylaktisch </option>
-                                            <option value=4>Definitiv</option>
-                                            <option value=5>Andere </option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row mb-1">
-                                    <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
-                                        for="chemoverfahren">Verfahren:</label>
-                                    <div class="col-sm-9">
-                                        <select name="chemoverfahren" id="chemoverfahren"
-                                            class="form-select form-select-sm" aria-label="Verfahren">
-                                            <option selected value=0>unbekannt </option>
-                                            <option value=1>Druck Aerosol (PIPAC) </option>
-                                            <option value=2>Hypertherm Intraperitoneal (HIPEC) </option>
-                                            <option value=3>Hypertherm Intrathorakal (HITOC) </option>
-                                            <option value=4>Instillationstherapie </option>
-                                            <option value=5>Intraperitoneal </option>
-                                            <option value=6>Intravesikal </option>
-                                            <option value=7>Andere </option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row mb-1">
-                                    <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
-                                        for="chemoecogvorbeginn">ECOG vor Beginn:</label>
-                                    <div class="col-sm-9">
-                                        <select name="chemoecogvorbeginn" id="chemoecogvorbeginn"
-                                            class="form-select form-select-sm" aria-label="ECOG vor Beginn">
-                                            <option selected value=0>unbekannt </option>
-                                            <option value=1>0 - Volle Aktivität, normales Leben möglich</option>
-                                            <option value=2>1 - Eingeschränkte Aktivität, leichte Arbeit möglich
-                                            </option>
-                                            <option value=3>2 - bis 50% der Tageszeit ruhebedürftig </option>
-                                            <option value=4>3 - Mehr als 50% der Tageszeit ruhebedürftig </option>
-                                            <option value=5>4 - Bettlägerig und völlig pflegebedürftig </option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row mb-1">
-                                    <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
-                                        for="chemoansprechen">Ansprechen der Therapie:</label>
-                                    <div class="col-sm-9">
-                                        <select name="chemoansprechen" id="chemoansprechen"
-                                            class="form-select form-select-sm" aria-label="Ansprechen der Therapie">
-                                            <option value=0 selected>unbekannt </option>
-                                            <option value=1>Complete Response </option>
-                                            <option value=2>Partial Response </option>
-                                            <option value=3>Progressive Disease </option>
-                                            <option value=4>Stable Disease </option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row mb-1">
-                                    <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
-                                        for="chemokomplikationen">Komplikationen:</label>
-                                    <div class="col-sm-9">
-                                        <select name="chemokomplikationen" id="chemokomplikationen"
-                                            class="form-select form-select-sm" aria-label="Komplikationen">
-                                            <option selected value=0>Keine </option>
-                                            <option value=1>Fieber ohne stationären Aufenthalt </option>
-                                            <option value=2>Fieber mit stationären Aufenthalt</option>
-                                            <option value=3>Adverse Event mit Todesfall (CTC 5) </option>
-                                            <option value=4>Andere </option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row mb-1">
-                                    <label style class="sr-only col-sm-3 col-form-label col-form-label-sm"
-                                        for="radioextern">Extern:</label>
-                                    <div class="col-sm-9">
-                                        <input type="checkbox" aria-label="Radiotherapie extern" id="radiotherapie"
-                                            name="radiotherapie">
-                                    </div>
-                                </div>
-                                <div class="row mb-1">
-                                    <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
-                                        for="radiobemerkung">Bemerkung:</label>
-                                    <div class="col-sm-9">
-                                        <textarea name="radiobemerkung" maxlength=600 rows="7"
-                                            class="form-control form-control-sm" id="radiobemerkung"
-                                            style="resize: none;"></textarea>
+                            <div class="row mb-1 justify-content-end">
+                                <div class="col-sm-9 col-form-label">
+                                    <div class="input-group input-group-sm" id="dosisccnu1">
+                                        <input type="number" class="form-control form-control-sm"
+                                            aria-label="dosisccnu1" name="dosisccnu1" placeholder="Dosis CCNU">
+                                        <span class="input-group-text">mg/m<sup>2</sup></span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="modal-footer">
-                                <input type="reset" class="btn btn-primary" value="Zurücksetzen">
-                                <button type="button" class="btn btn-primary">Speichern</button>
+
+                            <div class="row mb-1 justify-content-end">
+                                <div class="col-sm-9 col-form-label">
+                                    <div class="input-group input-group-sm" id="temozolomid1">
+                                        <input type="number" class="form-control form-control-sm"
+                                            aria-label="temozolomid1" id="temozolomid1" name="temozolomid1"
+                                            placeholder="Dosis Temozolomid">
+                                        <span class="input-group-text">mg/m<sup>2</sup></span>
+                                    </div>
+                                </div>
                             </div>
+
+                            <div class="row mb-1 justify-content-end">
+                                <div class="col-sm-9 col-form-label">
+                                    <div class="input-group input-group-sm" id="procarbazin1">
+                                        <input type="number" class="form-control form-control-sm"
+                                            aria-label="procarbazin1" id="procarbazin1" name="procarbazin1"
+                                            placeholder="Dosis Procarbazin">
+                                        <span class="input-group-text">mg/m<sup>2</sup></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-1 justify-content-end">
+                                <div class="col-sm-9 col-form-label">
+                                    <div class="input-group input-group-sm" id="methotrexat1">
+                                        <input type="number" class="form-control form-control-sm"
+                                            aria-label="methotrexat1" id="methotrexat1" name="methotrexat1"
+                                            placeholder="Dosis Methotrexat">
+                                        <span class="input-group-text">mg/m<sup>2</sup></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-1 justify-content-end">
+                                <div class="col-sm-9 col-form-label">
+                                    <div class="input-group input-group-sm" id="cytarabin1">
+                                        <input type="number" class="form-control form-control-sm"
+                                            aria-label="cytarabin1" id="cytarabin1" name="cytarabin1"
+                                            placeholder="Dosis Cytarabin">
+                                        <span class="input-group-text">mg/m<sup>2</sup></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-1 justify-content-end">
+                                <div class="col-sm-9 col-form-label">
+                                    <div class="input-group input-group-sm" id="vincristin 1" tyle="display: none;">
+                                        <input type="number" class="form-control form-control-sm"
+                                            aria-label="vincristin 1" id="vincristin 1" name="vincristin 1"
+                                            placeholder="Dosis Vincristin ">
+                                        <span class="input-group-text">mg/m<sup>2</sup></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="chemophase">Phase
+                                    der Behandlung:</label>
+                                <div class="col-sm-9">
+                                    <select name="chemophase" id="chemophase" class="form-select form-select-sm"
+                                        aria-label="Phase der Behandlung">
+                                        <option selected value=0 disable hidden> </option>
+                                        <option value=1>Adjuvant </option>
+                                        <option value=2>Neoadjuvant</option>
+                                        <option value=3>Intraoperativ </option>
+                                        <option value=4>Ohne OP</option>
+                                        <option value=5>Andere </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                    for="chemointention">Intention:</label>
+                                <div class="col-sm-9">
+                                    <select name="chemointention" id="chemointention" class="form-select form-select-sm"
+                                        aria-label="Intention">
+                                        <option selected value=0>unbekannt </option>
+                                        <option value=1>Kurativ </option>
+                                        <option value=2>Palliativ</option>
+                                        <option value=3>Prophylaktisch </option>
+                                        <option value=4>Definitiv</option>
+                                        <option value=5>Andere </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                    for="chemoverfahren">Verfahren:</label>
+                                <div class="col-sm-9">
+                                    <select name="chemoverfahren" id="chemoverfahren" class="form-select form-select-sm"
+                                        aria-label="Verfahren">
+                                        <option selected value=0>unbekannt </option>
+                                        <option value=1>Druck Aerosol (PIPAC) </option>
+                                        <option value=2>Hypertherm Intraperitoneal (HIPEC) </option>
+                                        <option value=3>Hypertherm Intrathorakal (HITOC) </option>
+                                        <option value=4>Instillationstherapie </option>
+                                        <option value=5>Intraperitoneal </option>
+                                        <option value=6>Intravesikal </option>
+                                        <option value=7>Andere </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                    for="chemoecogvorbeginn">ECOG vor Beginn:</label>
+                                <div class="col-sm-9">
+                                    <select name="chemoecogvorbeginn" id="chemoecogvorbeginn"
+                                        class="form-select form-select-sm" aria-label="ECOG vor Beginn">
+                                        <option selected value=0>unbekannt </option>
+                                        <option value=1>0 - Volle Aktivität, normales Leben möglich</option>
+                                        <option value=2>1 - Eingeschränkte Aktivität, leichte Arbeit möglich
+                                        </option>
+                                        <option value=3>2 - bis 50% der Tageszeit ruhebedürftig </option>
+                                        <option value=4>3 - Mehr als 50% der Tageszeit ruhebedürftig </option>
+                                        <option value=5>4 - Bettlägerig und völlig pflegebedürftig </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                    for="chemoansprechen">Ansprechen der Therapie:</label>
+                                <div class="col-sm-9">
+                                    <select name="chemoansprechen" id="chemoansprechen"
+                                        class="form-select form-select-sm" aria-label="Ansprechen der Therapie">
+                                        <option value=0 selected>unbekannt </option>
+                                        <option value=1>Complete Response </option>
+                                        <option value=2>Partial Response </option>
+                                        <option value=3>Progressive Disease </option>
+                                        <option value=4>Stable Disease </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                    for="chemokomplikationen">Komplikationen:</label>
+                                <div class="col-sm-9">
+                                    <select name="chemokomplikationen" id="chemokomplikationen"
+                                        class="form-select form-select-sm" aria-label="Komplikationen">
+                                        <option selected value=0>Keine </option>
+                                        <option value=1>Fieber ohne stationären Aufenthalt </option>
+                                        <option value=2>Fieber mit stationären Aufenthalt</option>
+                                        <option value=3>Adverse Event mit Todesfall (CTC 5) </option>
+                                        <option value=4>Andere </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <label style class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                    for="radioextern">Extern:</label>
+                                <div class="col-sm-9">
+                                    <input type="checkbox" aria-label="Radiotherapie extern" id="radiotherapie"
+                                        name="radiotherapie">
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                    for="radiobemerkung">Bemerkung:</label>
+                                <div class="col-sm-9">
+                                    <textarea name="radiobemerkung" maxlength=600 rows="7"
+                                        class="form-control form-control-sm" id="radiobemerkung"
+                                        style="resize: none;"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="reset" class="btn btn-primary" value="Zurücksetzen">
+                            <button type="button" class="btn btn-primary">Speichern</button>
                         </div>
                     </div>
                 </div>
+            </div>
 
 
 
@@ -3283,8 +3547,8 @@
 <!--Histologie:-->
 <script>
     $(document).ready(function () {
-        $("#pdatum").change(function () {
-            date1 = $("#pdatum").val();
+        $("#pdatumintern").change(function () {
+            date1 = $("#pdatumintern").val();
             date2 = new Date(date1);
             $('#pdate').text("H-" + date2.getFullYear() + "-");
         });
