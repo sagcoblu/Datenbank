@@ -8,25 +8,18 @@
 }
 
 section {
-  height: 100vh;
+  height: 100em;
   width: 100vw;
   scroll-snap-align: start;
 }
 
-:root{
-  scroll-behavior: auto;
-}
+
 
 html, body {
   margin: 0; 
   height: 100%; 
-  overflow: hidden;
-  position: relative;
 }
 
-html {
-  scroll-snap-type: y mandatory;
-}
 
 li a:hover {
   background-color: #acd7f2;
