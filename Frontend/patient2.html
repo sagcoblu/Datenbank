@@ -124,7 +124,7 @@
 
 <body class="d-flex flex-column h-100" data-bs-spy="scroll" data-bs-target="#navbarSupportedContent">
     <header>
-        <nav class="navbar navbar-expand-md bg-light fixed-top">
+        <nav class="navbar navbar-expand-md ms-auto bg-light fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Neuro Onko DB</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".dual-collapse2"
@@ -173,7 +173,7 @@
                             <a class="nav-link" href="#verlauf">Verlauf</a>
                         </li>
                     </ul>
-                    <ul class="navbar-nav me-0 mb-2 mb-lg-0">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="offcanvas" href="#dokumentanlegen" role="button"
                                 aria-controls="dokumentanlegen">Dokument anlegen</a>
@@ -474,6 +474,7 @@
                                 <tr>
                                     <th scope="col">Datum</th>
                                     <th scope="col">Diagnose nach WHO</th>
+                                    <th scope="col">Betroffene Region</th>
                                     <th scope="col">Art der Diagnose</th>
                                 </tr>
                             </thead>
@@ -481,16 +482,19 @@
                                 <tr>
                                     <td> 01.01.2000</td>
                                     <td> Supratentorielles Ependymom, YAP1-Fusion-positiv</td>
+                                    <td> Cerebellum</td>
                                     <td> Primärfall außerhalb der Primärfalldefinition</td>
                                 </tr>
                                 <tr>
                                     <td> 01.01.2000</td>
                                     <td> Supratentorielles Ependymom, YAP1-Fusion-positiv</td>
+                                    <td> Cerebellum</td>
                                     <td> Primärfall außerhalb der Primärfalldefinition</td>
                                 </tr>
                                 <tr>
                                     <td> 01.01.2000</td>
                                     <td> Supratentorielles Ependymom, YAP1-Fusion-positiv</td>
+                                    <td> Cerebellum</td>
                                     <td> Primärfall außerhalb der Primärfalldefinition</td>
                                 </tr>
                             </tbody>
@@ -504,25 +508,30 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Datum</th>
-                                    <th scope="col">2</th>
-                                    <th scope="col">3</th>
+                                    <th scope="col">Diagnose</th>
+                                    <th scope="col">Seite</th>
                                 </tr>
                             </thead>
                             <tbody id="nebendiagnosetable">
                                 <tr>
                                     <td> 01.01.2000</td>
-                                    <td> TestDiagnose</td>
-                                    <td> Wert 3</td>
+                                    <td> Typ-2-Diabetes</td>
+                                    <td> irrelevant</td>
                                 </tr>
                                 <tr>
                                     <td> 01.01.2000</td>
-                                    <td> TestDiagnose</td>
-                                    <td> Wert 3</td>
+                                    <td> Herzinsuffizienz </td>
+                                    <td> irrelevant</td>
                                 </tr>
                                 <tr>
                                     <td> 01.01.2000</td>
-                                    <td> TestDiagnose</td>
-                                    <td> Wert 3</td>
+                                    <td> Chronische Niereninsuffizienz</td>
+                                    <td> irrelevant</td>
+                                </tr>
+                                <tr>
+                                    <td> 01.01.2000</td>
+                                    <td> Vorhofflattern und Vorhofflimmern</td>
+                                    <td> irrelevant</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -534,21 +543,21 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">Datum</th>
-                                        <th scope="col">2</th>
+                                        <th scope="col">Allergie</th>
                                     </tr>
                                 </thead>
                                 <tbody id="allergietable">
                                     <tr>
                                         <td> 01.01.2000</td>
-                                        <td> TestDiagnose</td>
+                                        <td> Erdbeeren</td>
                                     </tr>
                                     <tr>
                                         <td> 01.01.2000</td>
-                                        <td> TestDiagnose</td>
+                                        <td> Kontrastmittel</td>
                                     </tr>
                                     <tr>
                                         <td> 01.01.2000</td>
-                                        <td> TestDiagnose</td>
+                                        <td> Penicillin-Unverträglichkeit</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -557,26 +566,26 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
-                        <h3 style="text-align: start; padding-top: 70px;" id="komplikationen">Komplikationen</h3>
-                        <table class="table table-striped table-hover" id="komplikationentable">
+                        <h3 style="text-align: start; padding-top: 70px;" id="komplikation">Komplikationen</h3>
+                        <table class="table table-striped table-hover" id="komplikationtable">
                             <thead>
                                 <tr>
                                     <th scope="col">Datum</th>
-                                    <th scope="col">2</th>
+                                    <th scope="col">Komplikation</th>
                                 </tr>
                             </thead>
-                            <tbody id="komplikationentable">
+                            <tbody id="komplikationtable">
                                 <tr>
                                     <td> 01.01.2000</td>
-                                    <td> TestDiagnose</td>
+                                    <td> Liquordrainage bei Liquorleck</td>
                                 </tr>
                                 <tr>
                                     <td> 01.01.2000</td>
-                                    <td> TestDiagnose</td>
+                                    <td> Nachblutung</td>
                                 </tr>
                                 <tr>
                                     <td> 01.01.2000</td>
-                                    <td> TestDiagnose</td>
+                                    <td> Wundinfektion</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -886,10 +895,10 @@
                             </div>
                             <div class="row mb-1">
                                 <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
-                                    for="nebendiagnosensuche">Diagnose:</label>
+                                    for="nebendiagnosesuche">Diagnose:</label>
                                 <!--Adipositas, Akutes HIV-Infektionssyndrom, Alkoholabusus, Asthma bronchiale, Atherosklerose, Bronchitis, Neubildung der Bronchien und der Lunge, Bösartige Neubildung der Cervix uteri, Bösartige Neubildung der Niere(ausgenommen Nierenbecken), Bösartige Neubildung der Schilddrüse, Bösartige Neubildung des Gehirns, Bösartige Neubildung des Kolons, Bösartige Neubildung des Ovars, Bösartige Neubildung des Rektums, Bösartige Neubildung des Uterus, Teil nicht näher bezeichnet, Bösartige Neubildung infolge von HIV-Krankheit, Bösartiges Melanom der Haut, Chronische Niereninsuffizienz, Chronische Rhinitis, Rhinopharyngitis und Pharyngitis, Chronische Virushepatitis B mit Delta-Virus, Chronische Virushepatitis C, Chronische ischämische Herzkrankheit, Demenz bei Alzheimer-Krankheit, Eisenmangelanämie, Epilepsie, Essentielle (primäre) Hypertonie, Gastroösophageale Refluxkrankheit, Herzinsuffizienz, Hodgkin-Krankheit, Hyperparathyreoidismus und sonstige Krankheiten der Nebenschilddrüse, Hyperthyreose [Thyreotoxikose], Jodmangelbedingte Schilddrüsenkrankheiten, Kardiomyopathie, Leberversagen, Lungentuberkulose, Mammakarzinom, Nicht näher bezeichnete HIV-Krankheit, Nicht primär insulinabhängiger Diabetes mellitus [Typ-2-Diabetes], Nikotinabusus, Non-Hodgkin-Lymphom, Plasmozytom, Polyarthrose, Primär insulinabhängiger Diabetes mellitus [Typ-1-Diabetes], Primäres Parkinson-Syndrom, Psychische und Verhaltensstörungen durch Alkohol, Thrombose, Phlebitis und Thrombophlebitis, Ulcus ventriculi, Vaskuläre Demenz, Verschluss und Stenose präzerebraler Arterien ohne resultierenden Hirninfarkt, Vorhofflattern und Vorhofflimmern-->
                                 <div class="col-sm-9">
-                                    <input class="form-control  form-control-sm" type="text" id="nebendiagnosensuche"
+                                    <input class="form-control  form-control-sm" type="text" id="nebendiagnosesuche"
                                         required>
                                     <div id="nebendiagnosesuggestion-box"></div>
                                     <div id="nebenedaigid"></div>
@@ -2266,7 +2275,7 @@
                             </div>
                             <div class="row mb-1">
                                 <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
-                                    for="enummerintern">Einsendenummerintern:</label>
+                                    for="enummerintern">Einsendenummer:</label>
                                 <div class="col-sm-9">
                                     <div class="input-group input-group-sm">
                                         <span class="input-group-text" id="pdate">H-</span>
@@ -2362,7 +2371,7 @@
                             </div>
                             <div class="row mb-1">
                                 <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
-                                    for="enummerextern">Einsendenummerextern:</label>
+                                    for="enummerextern">Einsendenummer:</label>
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control form-control-sm" aria-label="enummerextern"
                                         id="enummerextern" name="enummerextern">
@@ -2370,7 +2379,7 @@
                             </div>
                             <div class="row mb-1">
                                 <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
-                                    for="probenartextern">probenartextern:</label>
+                                    for="probenartextern">Probenart:</label>
                                 <div class="col-sm-9">
                                     <select name="probenartextern" id="probenartextern"
                                         class="form-select form-select-sm" aria-label="probenartextern">
@@ -2878,6 +2887,40 @@
             </div>
         </section>
         <section class="container" id="systemtherapie">
+
+            <table class="table table-striped table-hover mt-2" id="systemtherapietable">
+                <thead>
+                    <tr>
+                        <th scope="col">Anfang der Therapie</th>
+                        <th scope="col">Ende der Therapie</th>
+                        <th scope="col">Phase der Behandlung</th>
+                        <th scope="col">Protokoll</th>
+                    </tr>
+                </thead>
+                <tbody id="systemtherapietable">
+
+                </tbody>
+            </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal"
                 data-bs-target="#modalsystemtherapie">
                 Systemtherapie anlegen
@@ -2929,6 +2972,33 @@
                                 </div>
                             </div>
                             <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="chemophase">Phase
+                                    der Behandlung:</label>
+                                <div class="col-sm-9">
+                                    <select name="chemophase" id="chemophase" class="form-select form-select-sm"
+                                        aria-label="Phase der Behandlung">
+                                        <option selected value=0 disable hidden> </option>
+                                        <option value=1>Adjuvant </option>
+                                        <option value=2>Neoadjuvant</option>
+                                        <option value=3>Intraoperativ </option>
+                                        <option value=4>Ohne OP</option>
+                                        <option value=5>Andere </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                    for="chemozyklus">Schema:</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" list="zykluslist" id="chemozyklus">
+                                    <datalist id="zykluslist">
+                                        <option value="5/28">5/28</option>
+                                        <option value="7/7">7/7</option>
+                                    
+                                    </datalist>
+                                </div>
+                            </div>
+                            <div class="row mb-1">
                                 <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
                                     for="systemtherapieprotokoll">Protokoll:</label>
                                 <div class="col-sm-9">
@@ -2948,93 +3018,62 @@
                                 </div>
                             </div>
                             <div class="row mb-1">
-                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm "
-                                    for="dosisacnu1">Dosis:</label>
-                                <div class="col-sm">
-                                    <div class="input-group input-group-sm" id="dosisacnu1">
-                                        <input type="number" class="form-control form-control-sm"
-                                            aria-label="dosisacnu1" id="dosisacnu1" name="dosisacnu1"
-                                            placeholder="Dosis ACNU">
-                                        <span class="input-group-text">mg/m<sup>2</sup></span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row mb-1 justify-content-end">
+                                <div class="col-sm-3">
+                                <label class="sr-only col-form-label col-form-label-sm">Dosis:</label>
+                                </div>                                
                                 <div class="col-sm-9 col-form-label">
-                                    <div class="input-group input-group-sm" id="dosisccnu1">
+                                    <div class="input-group input-group-sm mb-1" id="acnu" hidden>
                                         <input type="number" class="form-control form-control-sm"
-                                            aria-label="dosisccnu1" name="dosisccnu1" placeholder="Dosis CCNU">
+                                            aria-label="dosisacnu1" id="dosisacnu" name="dosisacnu" placeholder="Dosis ACNU">
                                         <span class="input-group-text">mg/m<sup>2</sup></span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row mb-1 justify-content-end">
-                                <div class="col-sm-9 col-form-label">
-                                    <div class="input-group input-group-sm" id="temozolomid1">
+                                    </div>                                        
+                                    <div class="input-group input-group-sm mb-1" id="temozolomid" hidden>
                                         <input type="number" class="form-control form-control-sm"
-                                            aria-label="temozolomid1" id="temozolomid1" name="temozolomid1"
+                                            aria-label="dosistemozolomid" id="dosistemozolomid" name="dosistemozolomid"
                                             placeholder="Dosis Temozolomid">
                                         <span class="input-group-text">mg/m<sup>2</sup></span>
                                     </div>
-                                </div>
-                            </div>
-
-                            <div class="row mb-1 justify-content-end">
-                                <div class="col-sm-9 col-form-label">
-                                    <div class="input-group input-group-sm" id="procarbazin1">
+                                    <div class="input-group input-group-sm mb-1" id="procarbazin" hidden>
                                         <input type="number" class="form-control form-control-sm"
-                                            aria-label="procarbazin1" id="procarbazin1" name="procarbazin1"
+                                            aria-label="dosisprocarbazin" id="dosisprocarbazin" name="dosisprocarbazin"
                                             placeholder="Dosis Procarbazin">
                                         <span class="input-group-text">mg/m<sup>2</sup></span>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row mb-1 justify-content-end">
-                                <div class="col-sm-9 col-form-label">
-                                    <div class="input-group input-group-sm" id="methotrexat1">
+                                    <div class="input-group input-group-sm mb-1" id="ccnu" hidden>
                                         <input type="number" class="form-control form-control-sm"
-                                            aria-label="methotrexat1" id="methotrexat1" name="methotrexat1"
+                                            aria-label="dosisccnu" id="dosisccnu" name="dosisccnu" placeholder="Dosis CCNU">
+                                        <span class="input-group-text">mg/m<sup>2</sup></span>
+                                    </div>
+                                    <div class="input-group input-group-sm mb-1" id="methotrexat" hidden>
+                                        <input type="number" class="form-control form-control-sm"
+                                            aria-label="dosismethotrexat" id="dosismethotrexat" name="dosismethotrexat"
                                             placeholder="Dosis Methotrexat">
                                         <span class="input-group-text">mg/m<sup>2</sup></span>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row mb-1 justify-content-end">
-                                <div class="col-sm-9 col-form-label">
-                                    <div class="input-group input-group-sm" id="cytarabin1">
+                                    <div class="input-group input-group-sm mb-1" id="cytarabin" hidden>
                                         <input type="number" class="form-control form-control-sm"
-                                            aria-label="cytarabin1" id="cytarabin1" name="cytarabin1"
+                                            aria-label="dosiscytarabin" id="dosiscytarabin" name="dosiscytarabin"
                                             placeholder="Dosis Cytarabin">
                                         <span class="input-group-text">mg/m<sup>2</sup></span>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row mb-1 justify-content-end">
-                                <div class="col-sm-9 col-form-label">
-                                    <div class="input-group input-group-sm" id="vincristin 1" tyle="display: none;">
+                                    <div class="input-group input-group-sm mb-1" id="vincristin" hidden>
                                         <input type="number" class="form-control form-control-sm"
-                                            aria-label="vincristin 1" id="vincristin 1" name="vincristin 1"
+                                            aria-label="dosisvincristin" id="dosisvincristin" name="dosisvincristin"
                                             placeholder="Dosis Vincristin ">
                                         <span class="input-group-text">mg/m<sup>2</sup></span>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="row mb-1">
-                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="chemophase">Phase
-                                    der Behandlung:</label>
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                    for="chemoschema">Schema:</label>
                                 <div class="col-sm-9">
-                                    <select name="chemophase" id="chemophase" class="form-select form-select-sm"
-                                        aria-label="Phase der Behandlung">
-                                        <option selected value=0 disable hidden> </option>
-                                        <option value=1>Adjuvant </option>
-                                        <option value=2>Neoadjuvant</option>
-                                        <option value=3>Intraoperativ </option>
-                                        <option value=4>Ohne OP</option>
-                                        <option value=5>Andere </option>
-                                    </select>
+                                    <input class="form-control" list="schemalist" id="chemoschema">
+                                    <datalist id="schemalist">
+                                        <option value="5/28">5/28</option>
+                                        <option value="7/7">7/7</option>
+                                    
+                                    </datalist>
                                 </div>
                             </div>
                             <div class="row mb-1">
@@ -3235,7 +3274,7 @@
             </div>
         </section>
 
-        <div class="offcanvas offcanvas-end w-auto" tabindex="-1" id="dokumentanlegen"
+        <div class="offcanvas offcanvas-end w-auto bg-light" tabindex="-1" id="dokumentanlegen"
             aria-labelledby="dokumentanlegenLabel">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="dokumentanlegenLabel">Dokument anlegen</h5>
@@ -3457,5 +3496,44 @@
 
 <!--Systemtherapie:-->
 <script>
-
+    $(document).ready(function () {
+        $("#systemtherapieprotokoll").change(function () {
+            $("#acnu,#ccnu,#temozolomid,#procarbazin,#methotrexat,#cytarabin,#vincristin").each(function() {
+                $(this).attr("hidden", true);
+            })
+            $("#dosisacnu,#dosisccnu,#dosistemozolomid,#dosisprocarbazin,#dosismethotrexat,#dosiscytarabin,#dosisvincristin").each(function() {
+                $(this).val("");
+            })
+            if (this.value == 1) {
+                $("#acnu").attr("hidden", false);
+            }
+            else if (this.value == 2) {
+                $("#ccnu").attr("hidden", false);
+            }
+            else if (this.value == 3) {
+                $("#temozolomid").attr("hidden", false);
+            }
+            else if (this.value == 4) {
+                $("#procarbazin").attr("hidden", false);
+            }
+            else if (this.value == 5) {
+                $("#methotrexat").attr("hidden", false);
+            }
+            else if (this.value == 6) {
+                $("#cytarabin").attr("hidden", false);
+            }
+            else if (this.value == 7) {
+                $("#vincristin").attr("hidden", false);
+            }
+            else if (this.value == 8) {
+                $("#procarbazin").attr("hidden", false);
+                $("#ccnu").attr("hidden", false);
+            }
+            else if (this.value == 9) {
+                $("#procarbazin").attr("hidden", false);
+                $("#ccnu").attr("hidden", false);
+                $("#vincristin").attr("hidden", false);
+            }
+        });
+    });
 </script>

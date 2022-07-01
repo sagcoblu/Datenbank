@@ -28,3 +28,8 @@ li a:hover {
 .nav-link.active {
   background-color: #acd7f2;
 }
+
+#dokumentanlegen .nav-link {
+  color: #707071;
+
+}
