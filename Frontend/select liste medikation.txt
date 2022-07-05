@@ -1,0 +1,73 @@
+<select>
+<option id='Brivaracetam'>Brivaracetam</option>
+<option id='Diazepam'>Diazepam</option>
+<option id='Lacosamid'>Lacosamid</option>
+<option id='Lamotrigin'>Lamotrigin</option>
+<option id='Levetiracetam'>Levetiracetam</option>
+<option id='Phenytoin'>Phenytoin</option>
+<option id='Valproinsäure'>Valproinsäure</option>
+</select> 
+
+<select>
+<option id='Acetylsalicylsäure + Atorvastatin + Ramipril'>Acetylsalicylsäure + Atorvastatin + Ramipril</option>
+<option id='Apixaban'>Apixaban</option>
+<option id='Enoxaparin'>Enoxaparin</option>
+<option id='Heparin (natürliches)'>Heparin (natürliches)</option>
+<option id='Phenprocoumon'>Phenprocoumon</option>
+<option id='Rivaroxaban'>Rivaroxaban</option>
+<option id='Tinzaparin'>Tinzaparin</option>
+</select> 
+
+<select>
+<option id='Acetylsalicylsäure'>Acetylsalicylsäure</option>
+<option id='Clopidogrel'>Clopidogrel</option>
+<option id='Prasugrel'>Prasugrel</option>
+<option id='Ticagrelor'>Ticagrelor</option>
+</select>
+
+<select>
+<option id='Amoxicillin'>Amoxicillin</option>
+<option id='Amoxicillin + Clavulansäure'>Amoxicillin + Clavulansäure</option>
+<option id='Ampicillin'>Ampicillin</option>
+<option id='Ampicillin + Sulbactam'>Ampicillin + Sulbactam</option>
+<option id='Cefotaxim'>Cefotaxim</option>
+<option id='Ceftriaxon'>Ceftriaxon</option>
+<option id='Cefuroxim'>Cefuroxim</option>
+<option id='Ciprofloxacin (zur Einnahme oder Infusion)'>Ciprofloxacin (zur Einnahme oder Infusion)</option>
+<option id='Clindamycin'>Clindamycin</option>
+<option id='Flucloxacillin'>Flucloxacillin</option>
+<option id='Levofloxacin'>Levofloxacin</option>
+<option id='Linezolid'>Linezolid</option>
+<option id='Metronidazol'>Metronidazol</option>
+<option id='Ofloxacin'>Ofloxacin</option>
+<option id='Piperacillin + Tazobactam'>Piperacillin + Tazobactam</option>
+<option id='Pivmecillinam'>Pivmecillinam</option>
+<option id='Rifampicin'>Rifampicin</option>
+<option id='Vancomycin'>Vancomycin</option>
+</select>
+
+<select>
+<option id='Dexamethason'>Dexamethason</option>
+<option id='Hydrocortison (Cortisol)'>Hydrocortison (Cortisol)</option>
+<option id='Prednisolon'>Prednisolon</option>
+</select>
+
+<select>
+<option id='Methocarbamol'>Methocarbamol</option>
+</select> 
+
+<select>
+<option id='Acetylsalicylsäure'>Acetylsalicylsäure</option>
+<option id='Ibuprofen (zur Einnahme)'>Ibuprofen (zur Einnahme)</option>
+<option id='Metamizol'>Metamizol</option>
+<option id='Paracetamol'>Paracetamol</option>
+</select> 
+
+<select>
+<option id='Fentanyl'>Fentanyl</option>
+<option id='Methadon'>Methadon</option>
+<option id='Morphin'>Morphin</option>
+<option id='Oxycodon'>Oxycodon</option>
+<option id='Sufentanil'>Sufentanil</option>
+</select> 
+

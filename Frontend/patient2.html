@@ -1077,7 +1077,8 @@
                             <h5 class="modal-title" id="modalbildgebungLabel">Bildgebung anlegen:</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-body">                            
+                            <form action="bildgebung/mrt.php">
                             <nav>
                                 <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                                     <button class="nav-link active" id="nav-MRT-tab" data-bs-toggle="tab"
@@ -3060,10 +3061,10 @@
                                     for="chemozyklus">Zyklus:</label>
                                 <div class="col-sm-9">
                                     <input type="number" class="form-control form-control-sm" aria-label="chemozyklus"
-                                        id="chemozyklus" name="chemozyklus">
+                                        id="chemozyklus" name="chemozyklus" min="1" max="6">
                                 </div>
                             </div>
-                            <div class="row mb-1">
+                            <div class="row mb-1"  title="Zusammensetzung von Chemotherapeutika">
                                 <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
                                     for="systemtherapieprotokoll">Protokoll:</label>
                                 <div class="col-sm-9">
@@ -3130,14 +3131,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row mb-1">
+                            <div class="row mb-1" title="Verabreichungsschema der Chemotherapeutika">
                                 <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
                                     for="chemoschema">Schema:</label>
                                 <div class="col-sm-9">
-                                    <input class="form-control" list="schemalist" id="chemoschema">
+                                    <input class="form-control form-control-sm" list="schemalist" id="chemoschema">
                                     <datalist id="schemalist">
-                                        <option value="5/28">5/28</option>
-                                        <option value="7/7">7/7</option>
+                                        <option value="Stupp-Schema">2 Tage die Woche, für 6 Wochen lang Bestrahlung mit 75 mg Temodal täglich</option>
+                                        <option value="5/28">5 Tage Therapie, 23 Tage Pause</option>
+                                        <option value="7/7">7 Tage Therapie, 7 Tage Pause</option>
                                     </datalist>
                                 </div>
                             </div>
