@@ -41,7 +41,7 @@ li a:hover {
   border: 4px solid #0000;
   border-radius: 50%;
   border-right-color: #008855;
-  animation: s5 1s infinite linear;
+  animation: s5 1s infinite ease-in-out;
 }
 .custom-loader::before,
 .custom-loader::after {
