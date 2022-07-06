@@ -1,0 +1,104 @@
+1.) Bildgebung Lokalisationen auf Überschriften beschränken
+
+patient2.html (Ln 1114, Ln 1390, Ln 1666)
+
+<option value="0" disabled selected hidden></option>
+<option value="1">Kopf</option>
+<option value="2">Wirbelsäule</option>
+<option value="3">Halswirbelsäule</option>
+<option value="4">Brustwirbelsäule</option>
+<option value="5">Lendenwirbelsäule</option>
+
+
+<option value="6">Staging</option> ---> in Ln 1390 bei Ct Lokalisation
+
+
+2.) Navbar Histologie Dropdown
+
+patient2.html (Ln 157)
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#histologie" id="navbarhistologiedropdown"
+        role="button" data-bs-toggle="dropdown" aria-expanded="false">Histologie</a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li><a class="dropdown-item" href="#histologieintern">Hauseigene Histologie </a></li>
+        <li><a class="dropdown-item" href="#histologieextern">Externe Histologie </a></li>
+    </ul>
+</li>
+
+3.) Modal Medikation
+
+patient2.html (Ln 1031)
+
+4.) Table Medikation
+
+patient2.html (Ln 596)
+
+5.) Bildgebung Tumorvolumen (Table)
+
+patient2.html (Ln 1041)
+
+<th scope="col">Tumorvolumen in cm<sup>3</sup></th>
+
+6.) OP Kategorien umbennen
+
+patient2.html (Ln 1973 bis Ln 2004 )
+
+<div class="row mb-1">
+    <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="opart">Art der OP:</label>
+    <div class="col-sm-9">
+        <select name="opart" id="opart" class="form-select form-select-sm"
+            aria-label="Art der Operation">
+            <option value="0" disabled selected hidden></option>
+            <option value="1">Primär-OP</option>
+            <option value="2">Nachresektion</option>
+            <option value="3">1. Rezidiv-OP</option>
+            <option value="4">2. Rezidiv-OP</option>
+            <option value="5">Wundrevision bei Infektion</option>
+            <option value="6">Nachblutung</option>
+            <option value="7">Andere</option>
+        </select>
+    </div>
+</div>
+<div class="row mb-1">
+    <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="opmaßnahme">Maßnahme:</label>
+    <div class="col-sm-9">
+        <select name="opmaßnahme" id="opmaßnahme" class="form-select form-select-sm"
+            aria-label="Maßnahme">
+            <option value="0" disabled selected></option>
+            <option value="1">Komplettresektion</option>
+            <option value="2">Teilresektion</option>
+            <option value="3">offene Biopsie</option>
+            <option value="4">Stereotaxie (rahmenlos)</option>
+            <option value="5">Stereotaxie (rahmenbasiert)</option>
+            <option value="6">Palliative Maßnahme</option>
+            <option value="7">Andere</option>
+        </select>
+    </div>
+</div>
+
+7.) Externe Histologie (Table) Durchführende Stelle --> Stelle
+
+patient2.html (Ln 2254)
+
+<th scope="col">Stelle</th>
+
+8.) Allergie Liste als Dropdown mit Kategorien (mit entsprechendem Placeholder im Textfeld:"Nähere Bezeichnung der Allergie")
+
+patient2.html (Ln 956)
+
+<label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                    for="allergiesuche">Allergie:</label>
+                                <div class="col-sm-9">
+                                    <select name="allergieauswahl" id="allergieauswahl" class="form-select form-select-sm"
+                                    aria-label="Auswahl der Allergie">
+                                    <option value="0" disabled selected></option>
+                                    <option value="1">Kontrastmittel</option>
+                                    <option value="2">Latex</option>
+                                    <option value="3">Lebensmittel</option>
+                                    <option value="4">Medikamente<option>
+                                    <option value="5">Pflaster<option>
+                                    <option value="6">Sonstige</option>
+                                </select>
+                                </div>
+                            </div>
