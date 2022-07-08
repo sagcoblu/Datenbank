@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Neuro Onko</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+</head>
+<body>
+    <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#modalmedikation">
+        Medikation anlegen
+    </button>
+    <div class="modal fade" id="modalmedikation" tabindex="-1" aria-labelledby="modalmedikationLabel" aria-hidden="true"
+        data-bs-backdrop="static">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalmedikationLabel">Medikation anlegen:</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="accordion" id="accordionmedikation">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingantiepileptika">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseantiepileptika" aria-expanded="false" aria-controls="collapseantiepileptika">
+                                <div>
+                                    <input type="checkbox" id="antiepileptika" name="antiepileptika">
+                                    <label for="antiepileptika">Antiepileptika</label>
+                                </div>
+                            </button>
+                          </h2>
+                          <div id="collapseantiepileptika" class="accordion-collapse collapse" aria-labelledby="headingantiepileptika" data-bs-parent="#accordionmedikation">
+                            <div class="accordion-body" id="bodyantiepileptika">
+                                <div>
+                                    <input type="checkbox" id="brivaracetam" name="brivaracetam">
+                                    <label for="brivaracetam">Brivaracetam</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="diazepam" name="diazepam">
+                                    <label for="diazepam">Diazepam</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="lacosamid" name="lacosamid">
+                                    <label for="lacosamid">Lacosamid</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="lamotrigin" name="lamotrigin">
+                                    <label for="lamotrigin">Lamotrigin</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="levetiracetam" name="levetiracetam">
+                                    <label for="levetiracetam">Levetiracetam</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="phenytoin" name="phenytoin">
+                                    <label for="phenytoin">Phenytoin</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="valproinsäure" name="valproinsäure">
+                                    <label for="valproinsäure">Valproinsäure</label>
+                                </div>                               
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingantikoagulantien">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseantikoagulantien" aria-expanded="false" aria-controls="collapseantikoagulantien">
+                                  <div>
+                                      <input type="checkbox" id="antikoagulantien" name="antikoagulantien">
+                                      <label for="antikoagulantien">Antikoagulantien</label>
+                                  </div>
+                              </button>
+                            </h2>
+                            <div id="collapseantikoagulantien" class="accordion-collapse collapse" aria-labelledby="headingantikoagulantien" data-bs-parent="#accordionmedikation">
+                              <div class="accordion-body">
+                                  <div>
+                                      <input type="checkbox" id="AAR" name="AAR">
+                                      <label for="AAR">Acetylsalicylsäure + Atorvastatin + Ramipril</label>
+                                  </div>
+                                  <div>
+                                      <input type="checkbox" id="apixaban" name="apixaban">
+                                      <label for="apixaban">Apixaban</label>
+                                  </div>
+                                  <div>
+                                      <input type="checkbox" id="enoxaparin" name="enoxaparin">
+                                      <label for="enoxaparin">Enoxaparin</label>
+                                  </div>
+                                  <div>
+                                      <input type="checkbox" id="heparin" name="heparin">
+                                      <label for="heparin">Heparin</label>
+                                  </div>
+                                  <div>
+                                      <input type="checkbox" id="phenprocoumon" name="phenprocoumon">
+                                      <label for="phenprocoumon">Phenprocoumon</label>
+                                  </div>
+                                  <div>
+                                      <input type="checkbox" id="rivaroxaban" name="rivaroxaban">
+                                      <label for="rivaroxaban">Rivaroxaban</label>
+                                  </div>
+                                  <div>
+                                      <input type="checkbox" id="tinzaparin" name="tinzaparin">
+                                      <label for="tinzaparin">Tinzaparin</label>
+                                  </div>                               
+                              </div>
+                            </div>
+                            </div>
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingthrombozytenaggregationshemmer">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsethrombozytenaggregationshemmer" aria-expanded="false" aria-controls="collapsethrombozytenaggregationshemmer">
+                                  <div>
+                                      <input type="checkbox" id="thrombozytenaggregationshemmer" name="thrombozytenaggregationshemmer">
+                                      <label for="thrombozytenaggregationshemmer">Thrombozytenaggregationshemmer</label>
+                                  </div>
+                              </button>
+                            </h2>
+                            <div id="collapsethrombozytenaggregationshemmer" class="accordion-collapse collapse" aria-labelledby="headingthrombozytenaggregationshemmer" data-bs-parent="#accordionmedikation">
+                              <div class="accordion-body">
+                                  <div>
+                                      <input type="checkbox" id="acetylsalicylsäure" name="acetylsalicylsäure" ckecked="">
+                                      <label for="acetylsalicylsäure">Acetylsalicylsäure</label>
+                                  </div>
+                                  <div>
+                                      <input type="checkbox" id="clopidogrel" name="clopidogrel">
+                                      <label for="clopidogrel">Clopidogrel</label>
+                                  </div>
+                                  <div>
+                                      <input type="checkbox" id="prasugrel" name="prasugrel">
+                                      <label for="prasugrel">Prasugrel</label>
+                                  </div>
+                                  <div>
+                                      <input type="checkbox" id="ticagrelor" name="ticagrelor">
+                                      <label for="ticagrelor">Ticagrelor</label>
+                                  </div>                                                        
+                              </div>
+                            </div>
+                          </div>
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingantibiotika">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseantibiotika" aria-expanded="false" aria-controls="collapseantibiotika">
+                                  <div>
+                                      <input type="checkbox" id="antibiotika" name="antibiotika">
+                                      <label for="antibiotika">Antibiotika</label>
+                                  </div>
+                              </button>
+                            </h2>
+                            <div id="collapseantibiotika" class="accordion-collapse collapse" aria-labelledby="headingantibiotika" data-bs-parent="#accordionmedikation">
+                              <div class="accordion-body">                                  
+                                <div>
+                                    <input type="checkbox" id="amoxicillin" name="amoxicillin">
+                                    <label for="amoxicillin">Amoxicillin</label></div>
+                                <div>
+                                    <input type="checkbox" id="amoxicillin + clavulansäure" name="amoxicillin + clavulansäure">
+                                    <label for="amoxicillin + clavulansäure">Amoxicillin + Clavulansäure</label></div>
+                                <div>
+                                    <input type="checkbox" id="ampicillin" name="ampicillin">
+                                    <label for="ampicillin">Ampicillin</label></div>
+                                <div>
+                                    <input type="checkbox" id="ampicillin + sulbactam" name="ampicillin + sulbactam">
+                                    <label for="ampicillin + sulbactam">Ampicillin + Sulbactam</label></div>
+                                <div>
+                                    <input type="checkbox" id="cefotaxim" name="cefotaxim">
+                                    <label for="cefotaxim">Cefotaxim</label></div>
+                                <div>
+                                    <input type="checkbox" id="ceftriaxon" name="ceftriaxon">
+                                    <label for="ceftriaxon">Ceftriaxon</label></div>
+                                <div>
+                                    <input type="checkbox" id="cefuroxim" name="cefuroxim">
+                                    <label for="cefuroxim">Cefuroxim</label></div>
+                                <div>
+                                    <input type="checkbox" id="ciprofloxacin" name="ciprofloxacin">
+                                    <label for="ciprofloxacin">Ciprofloxacin</label></div>
+                                <div>
+                                    <input type="checkbox" id="clindamycin" name="clindamycin">
+                                    <label for="clindamycin">Clindamycin</label></div>
+                                <div>
+                                    <input type="checkbox" id="flucloxacillin" name="flucloxacillin">
+                                    <label for="flucloxacillin">Flucloxacillin</label></div>
+                                <div>
+                                    <input type="checkbox" id="levofloxacin" name="levofloxacin">
+                                    <label for="levofloxacin">Levofloxacin</label></div>
+                                <div>
+                                    <input type="checkbox" id="linezolid" name="linezolid">
+                                    <label for="linezolid">Linezolid</label></div>
+                                <div>
+                                    <input type="checkbox" id="metronidazol" name="metronidazol">
+                                    <label for="metronidazol">Metronidazol</label></div>
+                                <div>
+                                    <input type="checkbox" id="ofloxacin" name="ofloxacin">
+                                    <label for="ofloxacin">Ofloxacin</label></div>
+                                <div>
+                                    <input type="checkbox" id="piperacillin + tazobactam" name="piperacillin + tazobactam">
+                                    <label for="piperacillin + tazobactam">Piperacillin + Tazobactam</label></div>
+                                <div>
+                                    <input type="checkbox" id="pivmecillinam" name="pivmecillinam">
+                                    <label for="pivmecillinam">Pivmecillinam</label></div>
+                                <div>
+                                    <input type="checkbox" id="rifampicin" name="rifampicin">
+                                    <label for="rifampicin">Rifampicin</label></div>
+                                <div>
+                                    <input type="checkbox" id="vancomycin" name="vancomycin">
+                                    <label for="vancomycin">Vancomycin</label></div>                       
+                                </div>
+                            </div>
+                          </div>
+                    </div>                   
+                    </div>
+                    <div class="modal-footer">
+                        <input type="reset" class="btn btn-primary" data-bs-dismiss="#modalmedikation" value="Zurücksetzen">
+                        <button type="button" class="btn btn-primary">Speichern</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/js/jquery-3.6.0.min.js"></script>
+        <script src="/js/bootstrap.bundle.min.js"></script>
+        <script src="/js/form-validation.js"></script>
+</body>
+
+</html>
+

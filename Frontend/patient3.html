@@ -277,17 +277,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row mb-1">
-                        <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
-                            for="studiedatum">studiedatum:</label>
-                        <div class="col-sm-9">
-                            <input type="date" class="form-control  form-control-sm" aria-label="studiedatum"
-                                id="studiedatum" name="geb" required>
-                            <div class="invalid-feedback">
-                                Bitte ein studiedatum wählen / eintragen.
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="row mb-1">
                         <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="strasse">Straße:</label>
                         <div class="col-sm-9">
@@ -956,11 +946,16 @@
                                 <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
                                     for="allergiesuche">Allergie:</label>
                                 <div class="col-sm-9">
-                                    <input class="form-control  form-control-sm" type="text" id="allergiesuche"
-                                        required>
-                                    <div id="allergiesuggestion-box"></div>
-                                    <!-- <option>neu...</option><option value="20">Arcoxia</option><option value="23">ASDF</option><option value="1">ass</option><option value="4">Carbamazepin</option><option value="16">Ciprofloxacin</option><option value="17">Diclofenac</option><option value="15">Doxycyclin</option><option value="7">Erdbeeren</option><option value="10">Heparin</option><option value="8">iodhaltiges Kontrastmittel</option><option value="6">Kontrastmittel</option><option value="11">Latex</option><option value="9">Levetiracetam</option><option value="13">Mehl</option><option value="3">Nickel</option><option value="18">Nitrate</option><option value="22">Paracetamol</option><option value="2">Penicillin-Unverträglichkeit</option><option value="5">Phenytoin</option><option value="19">Simvastatin</option><option value="14">Temozolomid</option><option value="21">Tramadol</option><option value="12">xyz</option>-->
-                                    <div id="allergieedaigid"></div>
+                                    <select name="allergieauswahl" id="allergieauswahl" class="form-select form-select-sm"
+                                    aria-label="Auswahl der Allergie">
+                                    <option value="0" disabled selected></option>
+                                    <option value="1">Kontrastmittel</option>
+                                    <option value="2">Latex</option>
+                                    <option value="3">Lebensmittel</option>
+                                    <option value="4">Medikamente<option>
+                                    <option value="5">Pflaster<option>
+                                    <option value="6">Sonstige</option>
+                                </select>
                                 </div>
                             </div>
                             <div class="row mb-1">

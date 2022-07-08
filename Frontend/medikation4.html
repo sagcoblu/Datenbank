@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Neuro Onko</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#modalmedikation">
+        Medikation anlegen
+    </button>
+    <div class="modal fade" id="modalmedikation" tabindex="-1" aria-labelledby="modalmedikationLabel" aria-hidden="true"
+        data-bs-backdrop="static">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalmedikationLabel">Medikation anlegen:</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-1">
+                        <div class="col-sm-3" style="white-space: nowrap">
+                           
+                            <label>Von:
+                            <input type="date" class="form-control form-control-sm"
+                                aria-label="Datum der Medikation" id="dateanfangantiepileptika"
+                                name="dateanfangantiepileptika">
+                            </label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="date" class="form-control  form-control-sm"
+                                aria-label="Datum der Medikation" id="dateendeantiepileptika"
+                                name="dateendeantiepileptika">
+                        </div>
+                        <div class="col-sm-3">
+                            <input class="form-control-sm form-control" list="listantiepileptika"
+                                id="datalistantiepileptika" placeholder="Wirkstoff">
+                            <datalist id="listantiepileptika">
+                                <option id='Brivaracetam'>Brivaracetam</option>
+                                <option id='Diazepam'>Diazepam</option>
+                                <option id='Lacosamid'>Lacosamid</option>
+                                <option id='Lamotrigin'>Lamotrigin</option>
+                                <option id='Levetiracetam'>Levetiracetam</option>
+                                <option id='Phenytoin'>Phenytoin</option>
+                                <option id='Valproinsäure'>Valproinsäure</option>
+                            </datalist>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="input-group input-group-sm mb-1" id="dosisantiepileptikagroup">
+                                <input type="number" class="form-control form-control-sm"
+                                    aria-label="dosisantiepileptika" id="dosisantiepileptika"
+                                    name="dosisantiepileptika" placeholder="Dosis">
+                                <span class="input-group-text">mg</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="reset" class="btn btn-primary" data-bs-dismiss="#modalmedikation" value="Zurücksetzen">
+                    <button type="button" class="btn btn-primary">Speichern</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/form-validation.js"></script>
+</body>
+
+</html>

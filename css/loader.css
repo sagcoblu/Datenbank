@@ -21,12 +21,12 @@
             border-left: 0.3rem solid;
             animation: 1.5s infinite;
   }
-        .loader-circle-2 {
+        /* .loader-circle-2 { 
 
         }
         .loader-circle-3{
 
-      }
+      }*/
 
     @keyframes spinner {
         0% {transform: rotate(0)}
