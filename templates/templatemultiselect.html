@@ -1,37 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Neuro Onko</title>
-    <link href="/css/bootstrap.min.css" rel="stylesheet">    
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
     <script src="/js/jquery-3.6.0.min.js"></script>
     <script src="/js/bootstrap.bundle.min.js"></script>
     <link href="/css/main.css" rel="stylesheet">
     <script src="/js/bootstrap-multiselect.js"></script>
     <link rel="stylesheet" href="/css/bootstrap-multiselect.css">
 </head>
+
 <body>
     <script type="text/javascript">
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('#example-getting-started').multiselect({
-                enableClickableOptGroups: true,
+
+                enableCollapsibleOptGroups: true,
                 enableFiltering: true,
                 enableCaseInsensitiveFiltering: true
             });
         });
     </script>
     <select id="example-getting-started" multiple="multiple">
-        <option value="cheese">Cheese</option>
-        <option value="tomatoes">Tomatoes</option>
-        <option value="mozarella">Mozzarella</option>
-        <option value="mushrooms">Mushrooms</option>
-        <option value="pepperoni">Pepperoni</option>
-        <option value="onions">Onions</option>
+        <optgroup id='Infektion' label="Infektion">
+            <option id='Oberflächliche Wundheilungsstörungen'>Oberflächliche Wundheilungsstörungen</option>
+            <option id='Bauchfellentzündung'>Bauchfellentzündung</option>
+            <option id='Meningitis'>Meningitis</option>
+            <option id='Enzephalitis'>Enzephalitis</option>
+            <option id='Ventrikulitis'>Ventrikulitis</option>
+            <option id='Pneumonie'>Pneumonie</option>
+            <option id='Sepsis'>Sepsis</option>
+            <option id='Abszess'>Abszess</option>
+            <option id='Empyem'>Empyem</option>
+            <option id='Sonstige Infektion'>Sonstige Infektion</option>
+        </optgroup>
+
+        <optgroup id='Blutgerinnsel' label="Blutgerinnsel">
+            <option id='Lungenembolie'>Lungenembolie</option>
+            <option id='Schlaganfall'>Schlaganfall</option>
+            <option id='Distale Thrombose'>Distale Thrombose</option>
+        </optgroup>
+        <optgroup id='Liquoraufstau' label="Liquoraufstau">
+            <option id='Liquorkissen'>Liquorkissen</option>
+            <option id='Liquorfistel'>Liquorfistel</option>
+        </optgroup>
+
+
+        <optgroup id='Bewusstseinsstörungen' label="Bewusstseinsstörungen">
+            <option id='Beeinträchtigungen der Merk- und Konzentrationsfähigkeit'>Beeinträchtigungen der Merk- und
+                Konzentrationsfähigkeit</option>
+            <option id='Persönlichkeitsstörungen'>Persönlichkeitsstörungen</option>
+            <option id='Gedächtnisverlust'>Gedächtnisverlust</option>
+            <option id='Sonstige Bewusstseinsstörung'>Sonstige Bewusstseinsstörung</option>
+        </optgroup>
+        <optgroup id='Verschlechterung der Bewegungsfähigkeit' label="Verschlechterung der Bewegungsfähigkeit">
+            <option id='Gesichtslähmung'>Gesichtslähmung</option>
+            <option id='Armlähmung'>Armlähmung</option>
+            <option id='Beinlähmung'>Beinlähmung</option>
+            <option id='Stimmbandlähmungen'>Stimmbandlähmungen</option>
+            <option id='Ataxie'>Ataxie</option>
+            <option id='Querschnittslähmung'>Querschnittslähmung</option>
+            <option id='Sonstige Bewegungseinschränkung'>Sonstige Bewegungseinschränkung</option>
+        </optgroup>
+        <optgroup id='Sprachstörung' label="Sprachstörung">
+            <option id='Amnestische Aphapsie'>Amnestische Aphapsie</option>
+            <option id='Broca-Aphasie'>Broca-Aphasie</option>
+            <option id='Wernicke-Aphasie'>Wernicke-Aphasie</option>
+            <option id='Globale Aphasie'>Globale Aphasie</option>
+            <option id='Dysphasie '>Dysphasie </option>
+        </optgroup>
+        <optgroup id='Sehstörung' label="Sehstörung">
+            <option id='Verschlechterung der Sehkraft'>Verschlechterung der Sehkraft</option>
+            <option id='Gesichtsfeldeinschränkung'>Gesichtsfeldeinschränkung</option>
+            <option id='Vollständige Erblindung'>Vollständige Erblindung</option>
+            <option id='Doppelbilder'>Doppelbilder</option>
+        </optgroup>
+        <optgroup id='Höreinschränkung' label="Höreinschränkung">
+            <option id='Verchlechterung des Hörvermögens'>Verchlechterung des Hörvermögens</option>
+            <option id='Vollständiger Hörverlust'>Vollständiger Hörverlust</option>
+            <option id='Tinnitus'>Tinnitus</option>
+        </optgroup>
+        <optgroup id='Sensibilitätsstörungen' label="Sensibilitätsstörungen">
+            <option id='Taubheitsgefühl'>Taubheitsgefühl</option>
+            <option id='Hypästhesie'>Hypästhesie</option>
+            <option id='Hyperästhesie'>Hyperästhesie</option>
+            <option id='Parästhesie'>Parästhesie</option>
+            <option id='Dysästhesie'>Dysästhesie</option>
+        </optgroup>
+        <optgroup id='Implantatversagen' label="Implantatversagen">
+            <option id='Fehlpositionierung'>Fehlpositionierung</option>
+            <option id='Knochenausbrüche'>Knochenausbrüche</option>
+            <option id='Implantatlockerung'>Implantatlockerung</option>
+            <option id='Instabilität'>Instabilität</option>
+        </optgroup>
+
+        <optgroup id="Andere" label="Andere">
+            <option id='Knochennekrose'>Knochennekrose</option>
+            <option id='Pneumocephalus'>Pneumocephalus</option>
+            <option id='Nachblutung'>Nachblutung</option>
+            <option id='Krampfanfall'>Krampfanfall</option>
+            <option id='Herz-Kreislaufversagen'>Herz-Kreislaufversagen</option>
+            <option id='Sonstige'>Sonstige</option>
+        </optgroup>
     </select>
 
 
 </body>
 
-</html> 
-
+</html>
