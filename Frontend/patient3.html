@@ -208,7 +208,7 @@
         </nav>
     </header>
     <main class="flex-shrink-0">
-        <section class="container" id="stammdaten">
+        <section class="container" id="stammdaten" >
             <form class="row row-cols-2 g-3 px-4 align-items-top mt-1 form-control-sm needs-validation" novalidate
                 action="php/api.php?newp" method="POST" name="pat" id="pat">
                 <div class="col">
@@ -734,37 +734,34 @@
                                         </optgroup>
                                         </optgroup>
                                         <optgroup label='Wirbelsäule'>
-                                        <optgroup label='&nbsp; Halswirbelsäule'>
-                                            <option id='C1'>C1</option>
-                                            <option id='C2'>C2</option>
-                                            <option id='C3'>C3</option>
-                                            <option id='C4'>C4</option>
-                                            <option id='C5'>C5</option>
-                                            <option id='C6'>C6</option>
-                                            <option id='C7'>C7</option>
-                                        </optgroup>
-                                        <optgroup label='&nbsp; Brustwirbelsäule'>
-                                            <option id='T1'>T1</option>
-                                            <option id='T2'>T2</option>
-                                            <option id='T3'>T3</option>
-                                            <option id='T4'>T4</option>
-                                            <option id='T5'>T5</option>
-                                            <option id='T6'>T6</option>
-                                            <option id='T7'>T7</option>
-                                            <option id='T8'>T8</option>
-                                            <option id='T9'>T9</option>
-                                            <option id='T10'>T10</option>
-                                            <option id='T11'>T11</option>
-                                            <option id='T12'>T12</option>
-                                        </optgroup>
-                                        <optgroup label='&nbsp; Lendenwirbelsäule'>
-                                            <option id='L1'>L1</option>
-                                            <option id='L2'>L2</option>
-                                            <option id='L3'>L3</option>
-                                            <option id='L4'>L4</option>
-                                            <option id='L5'>L5</option>
-                                            <option id='Sacrum' style="font-weight: bold;">Sacrum</option>
-                                        </optgroup>
+                                        <option id="Halswirbelsäule" style="font-weight: bold">Halswirbelsäule</option>
+                                        <option id='C1'>C1</option>
+                                        <option id='C2'>C2</option>
+                                        <option id='C3'>C3</option>
+                                        <option id='C4'>C4</option>
+                                        <option id='C5'>C5</option>
+                                        <option id='C6'>C6</option>
+                                        <option id='C7'>C7</option>
+                                        <option id="Brustwirbelsäule" style="font-weight: bold">Brustwirbelsäule</option>
+                                        <option id='T1'>T1</option>
+                                        <option id='T2'>T2</option>
+                                        <option id='T3'>T3</option>
+                                        <option id='T4'>T4</option>
+                                        <option id='T5'>T5</option>
+                                        <option id='T6'>T6</option>
+                                        <option id='T7'>T7</option>
+                                        <option id='T8'>T8</option>
+                                        <option id='T9'>T9</option>
+                                        <option id='T10'>T10</option>
+                                        <option id='T11'>T11</option>
+                                        <option id='T12'>T12</option>
+                                        <option id="Lendenwirbelsäule" style="font-weight: bold">Lendenwirbelsäule</option>
+                                        <option id='L1'>L1</option>
+                                        <option id='L2'>L2</option>
+                                        <option id='L3'>L3</option>
+                                        <option id='L4'>L4</option>
+                                        <option id='L5'>L5</option>
+                                        <option id='Sacrum' style="font-weight: bold;">Sacrum</option>
                                         </optgroup>
                                     </select>
                                 </div>
@@ -948,13 +945,13 @@
                                 <div class="col-sm-9">
                                     <select name="allergieauswahl" id="allergieauswahl" class="form-select form-select-sm"
                                     aria-label="Auswahl der Allergie">
-                                    <option value="0" disabled selected></option>
+                                    <option value="0" disabled selected hidden></option>
                                     <option value="1">Kontrastmittel</option>
                                     <option value="2">Latex</option>
                                     <option value="3">Lebensmittel</option>
-                                    <option value="4">Medikamente<option>
-                                    <option value="5">Pflaster<option>
-                                    <option value="6">Sonstige</option>
+                                    <option value="4">Medikamente</option>
+                                    <option value="5">Pflaster</option>
+                                    <option value="6">Sonstige</option>                                   
                                 </select>
                                 </div>
                             </div>
@@ -964,7 +961,7 @@
                                 <div class="col-sm-9">
                                     <textarea name="diagnosebemerkung" maxlength=600 rows="7"
                                         class="form-control form-control-sm" id="allergiebemerkung"
-                                        style="resize: none;"></textarea>
+                                        style="resize: none;" placeholder="Allergen hier eintragen"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -1634,11 +1631,10 @@
                                 </div>
                             </div>
                             <div class="row mb-1">
-                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="opindikation">OP
-                                    Indikation:</label>
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="opart">Art der OP:</label>
                                 <div class="col-sm-9">
-                                    <select name="opindikation" id="opindikation" class="form-select form-select-sm"
-                                        aria-label="Indikation zur Operation">
+                                    <select name="opart" id="opart" class="form-select form-select-sm"
+                                        aria-label="Art der Operation">
                                         <option value="0" disabled selected hidden></option>
                                         <option value="1">Primär-OP</option>
                                         <option value="2">Nachresektion</option>
@@ -1651,12 +1647,11 @@
                                 </div>
                             </div>
                             <div class="row mb-1">
-                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="opart">Art des
-                                    Eingriffs:</label>
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm" for="opmassnahme">Maßnahme:</label>
                                 <div class="col-sm-9">
-                                    <select name="opart" id="opart" class="form-select form-select-sm"
-                                        aria-label="Art des Eingriffs">
-                                        <option value="0" disabled selected></option>
+                                    <select name="opmassnahme" id="opmassnahme" class="form-select form-select-sm"
+                                        aria-label="Maßnahme">
+                                        <option value="0" disabled selected hidden></option>
                                         <option value="1">Komplettresektion</option>
                                         <option value="2">Teilresektion</option>
                                         <option value="3">offene Biopsie</option>
@@ -2721,6 +2716,21 @@
                             </div>
                             <div class="row mb-1">
                                 <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
+                                    for="chemointention">Intention:</label>
+                                <div class="col-sm-9">
+                                    <select name="chemointention" id="chemointention" class="form-select form-select-sm"
+                                        aria-label="Intention">
+                                        <option selected value=0>unbekannt </option>
+                                        <option value=1>Kurativ </option>
+                                        <option value=2>Palliativ</option>
+                                        <option value=3>Prophylaktisch </option>
+                                        <option value=4>Definitiv</option>
+                                        <option value=5>Andere </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
                                     for="chemozyklus">Zyklus:</label>
                                 <div class="col-sm-9">
                                     <input type="number" class="form-control form-control-sm" aria-label="chemozyklus"
@@ -2805,22 +2815,7 @@
                                         <option value="7/7">7 Tage Therapie, 7 Tage Pause</option>
                                     </datalist>
                                 </div>
-                            </div>
-                            <div class="row mb-1">
-                                <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
-                                    for="chemointention">Intention:</label>
-                                <div class="col-sm-9">
-                                    <select name="chemointention" id="chemointention" class="form-select form-select-sm"
-                                        aria-label="Intention">
-                                        <option selected value=0>unbekannt </option>
-                                        <option value=1>Kurativ </option>
-                                        <option value=2>Palliativ</option>
-                                        <option value=3>Prophylaktisch </option>
-                                        <option value=4>Definitiv</option>
-                                        <option value=5>Andere </option>
-                                    </select>
-                                </div>
-                            </div>
+                            </div>                            
                             <div class="row mb-1">
                                 <label class="sr-only col-sm-3 col-form-label col-form-label-sm"
                                     for="chemoverfahren">Verfahren:</label>
@@ -2975,13 +2970,13 @@
                                 <div class="col-sm-9">
                                     <select name="studiename" id="studiename" class="form-select form-select-sm"
                                         aria-label="Name der Studie">
-                                        <option selected value=0 disabled></option>
+                                        <option selected value=0 disabled hidden></option>
                                         <option value=1>MAOT-Reutlingen</option>
                                         <option value=2>3D-Ultraschall</option>
                                         <option value=3>TTF</option>
-                                        <option value=4></option>
-                                        <option value=5></option>
-                                        <option value=6></option>
+                                        <option value=4>Low Grade Gliome</option>
+                                        <option value=5>Radiochirurgie solitäre Metastasen</option>
+                                        <option value=6>Genetische Prädisposition Gliome (HFU)</option>
                                     </select>
                                 </div>
                             </div>
