@@ -33,11 +33,10 @@ li a:hover {
 
 }
 
-.multiselect-group {
-  font-weight: bold !important;
+.multiselect-container {
+  width: max-content;
 }
 
-.multiselect-container input {
-  display: none
+#modalkomplikation {
+  overflow-y: visible !important;
 }
-
