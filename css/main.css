@@ -37,6 +37,6 @@ li a:hover {
   width: max-content;
 }
 
-#modalkomplikation {
-  overflow-y: visible !important;
+span.multiselect-group {
+  text-decoration: underline;
 }

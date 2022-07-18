@@ -7,213 +7,33 @@
     <title>Neuro Onko</title>
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/main.css" rel="stylesheet">
+    
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/form-validation.js"></script>
 </head>
 
 <body>
-    <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#modalmedikation">
-        Medikation anlegen
-    </button>
-    <form action="">
-        <div class="modal fade" id="modalmedikation" tabindex="-1" aria-labelledby="modalmedikationLabel"
-            aria-hidden="true" data-bs-backdrop="static">
-            <div class="modal-dialog modal-lg modal-dialog-scrollable">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalmedikationLabel">Medikation anlegen:</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
+   
+      
 
-                        <h4 style="padding-bottom: 20px; padding-top: 30px;">Antiepileptika:</h4>
                         <div class="row mb-1">
                             <div class="col-sm-3">
                                 <input type="date" class="form-control  form-control-sm"
                                     aria-label="Datum der Medikation" id="dateanfangantiepileptika"
                                     name="dateanfangantiepileptika">
                             </div>
+                            
                             <div class="col-sm-3">
                                 <input type="date" class="form-control  form-control-sm"
-                                    aria-label="Datum der Medikation" id="dateendeantiepileptika"
-                                    name="dateendeantiepileptika">
+                                    aria-label="Datum der Medikation" id="dateanfangantiepileptika"
+                                    name="dateanfangantiepileptika">
                             </div>
                             <div class="col-sm-3">
-                                <input class="form-control-sm form-control" list="listantiepileptika"
-                                    id="datalistantiepileptika" placeholder="Wirkstoff">
-                                <datalist id="listantiepileptika">
-                                    <option id='Brivaracetam'>Brivaracetam</option>
-                                    <option id='Diazepam'>Diazepam</option>
-                                    <option id='Lacosamid'>Lacosamid</option>
-                                    <option id='Lamotrigin'>Lamotrigin</option>
-                                    <option id='Levetiracetam'>Levetiracetam</option>
-                                    <option id='Phenytoin'>Phenytoin</option>
-                                    <option id='Valproinsäure'>Valproinsäure</option>
-                                </datalist>
+                                <input class="form-control-sm form-control" id="datalistantiepileptika" placeholder="Wirkstoff">
+                            
                             </div>
-                            <div class="col-sm-3">
-                                <div class="input-group input-group-sm mb-1" id="dosisantiepileptikagroup">
-                                    <input type="number" class="form-control form-control-sm"
-                                        aria-label="dosisantiepileptika" id="dosisantiepileptika"
-                                        name="dosisantiepileptika" placeholder="Dosis">
-                                    <span class="input-group-text">mg</span>
-                                </div>
-                            </div>
-                        </div>
-                        <h4 style="padding-bottom: 20px; padding-top: 30px;">Antikoagulatien:</h4>
-                        <div class="row mb-1">
-                            <div class="col-sm-3">
-                                <input type="date" class="form-control  form-control-sm"
-                                    aria-label="Datum der Medikation" id="dateanfangantikoagulatien"
-                                    name="dateanfangantikoagulatien">
-                            </div>
-                            <div class="col-sm-3">
-                                <input type="date" class="form-control  form-control-sm"
-                                    aria-label="Datum der Medikation" id="dateendeantikoagulatien"
-                                    name="dateendeantikoagulatien">
-                            </div>
-                            <div class="col-sm-3">
-                                <input class="form-control-sm form-control" list="listantikoagulatien"
-                                    id="datalistantikoagulatien" placeholder="Wirkstoff">
-                                <datalist id="listantikoagulatien">
-                                    <option id='Acetylsalicylsäure + Atorvastatin + Ramipril'>Acetylsalicylsäure +
-                                        Atorvastatin + Ramipril</option>
-                                    <option id='Apixaban'>Apixaban</option>
-                                    <option id='Enoxaparin'>Enoxaparin</option>
-                                    <option id='Heparin (natürliches)'>Heparin (natürliches)</option>
-                                    <option id='Phenprocoumon'>Phenprocoumon</option>
-                                    <option id='Rivaroxaban'>Rivaroxaban</option>
-                                    <option id='Tinzaparin'>Tinzaparin</option>
-                                </datalist>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="input-group input-group-sm mb-1" id="dosisantikoagulatiengroup">
-                                    <input type="number" class="form-control form-control-sm"
-                                        aria-label="dosisantikoagulatien" id="dosisantikoagulatien"
-                                        name="dosisantikoagulatien" placeholder="Dosis">
-                                    <span class="input-group-text">mg</span>
-                                </div>
-                            </div>
-                        </div>
-                        <h4 style="padding-bottom: 20px; padding-top: 30px;">Thrombozytenaggregationshemmer:</h4>
-                        <div class="row mb-1">
-                            <div class="col-sm-3">
-                                <input type="date" class="form-control  form-control-sm"
-                                    aria-label="Datum der Medikation" id="dateanfangthrombozytenaggregationshemmer"
-                                    name="dateanfangthrombozytenaggregationshemmer">
-                            </div>
-                            <div class="col-sm-3">
-                                <input type="date" class="form-control  form-control-sm"
-                                    aria-label="Datum der Medikation" id="dateendethrombozytenaggregationshemmer"
-                                    name="dateendethrombozytenaggregationshemmer">
-                            </div>
-                            <div class="col-sm-3">
-                                <input class="form-control-sm form-control" list="listthrombozytenaggregationshemmer"
-                                    id="datalistthrombozytenaggregationshemmer" placeholder="Wirkstoff">
-                                <datalist id="listthrombozytenaggregationshemmer">
-                                    <option id='Acetylsalicylsäure'>Acetylsalicylsäure</option>
-                                    <option id='Clopidogrel'>Clopidogrel</option>
-                                    <option id='Prasugrel'>Prasugrel</option>
-                                    <option id='Ticagrelor'>Ticagrelor</option>
-                                </datalist>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="input-group input-group-sm mb-1"
-                                    id="dosisthrombozytenaggregationshemmergroup">
-                                    <input type="number" class="form-control form-control-sm"
-                                        aria-label="dosisthrombozytenaggregationshemmer"
-                                        id="dosisthrombozytenaggregationshemmer"
-                                        name="dosisthrombozytenaggregationshemmer" placeholder="Dosis">
-                                    <span class="input-group-text">mg</span>
-                                </div>
-                            </div>
-                        </div>
-                        <h4 style="padding-bottom: 20px; padding-top: 30px;">Antibiotika:</h4>
-                        <div class="row mb-1">
-                            <div class="col-sm-3">
-                                <input type="date" class="form-control  form-control-sm"
-                                    aria-label="Datum der Medikation" id="dateanfangantibiotika"
-                                    name="dateanfangantibiotika">
-                            </div>
-                            <div class="col-sm-3">
-                                <input type="date" class="form-control  form-control-sm"
-                                    aria-label="Datum der Medikation" id="dateendeantibiotika"
-                                    name="dateendeantibiotika">
-                            </div>
-                            <div class="col-sm-3">
-                                <input class="form-control-sm form-control" list="listantibiotika"
-                                    id="datalistantibiotika" placeholder="Wirkstoff">
-                                <datalist id="listantibiotika">
-                                    <option id='Amoxicillin'>Amoxicillin</option>
-                                    <option id='Amoxicillin + Clavulansäure'>Amoxicillin + Clavulansäure</option>
-                                    <option id='Ampicillin'>Ampicillin</option>
-                                    <option id='Ampicillin + Sulbactam'>Ampicillin + Sulbactam</option>
-                                    <option id='Cefotaxim'>Cefotaxim</option>
-                                    <option id='Ceftriaxon'>Ceftriaxon</option>
-                                    <option id='Cefuroxim'>Cefuroxim</option>
-                                    <option id='Ciprofloxacin (zur Einnahme oder Infusion)'>Ciprofloxacin (zur Einnahme
-                                        oder Infusion)</option>
-                                    <option id='Clindamycin'>Clindamycin</option>
-                                    <option id='Flucloxacillin'>Flucloxacillin</option>
-                                    <option id='Levofloxacin'>Levofloxacin</option>
-                                    <option id='Linezolid'>Linezolid</option>
-                                    <option id='Metronidazol'>Metronidazol</option>
-                                    <option id='Ofloxacin'>Ofloxacin</option>
-                                    <option id='Piperacillin + Tazobactam'>Piperacillin + Tazobactam</option>
-                                    <option id='Pivmecillinam'>Pivmecillinam</option>
-                                    <option id='Rifampicin'>Rifampicin</option>
-                                    <option id='Vancomycin'>Vancomycin</option>
-                                </datalist>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="input-group input-group-sm mb-1" id="dosisantibiotikagroup">
-                                    <input type="number" class="form-control form-control-sm"
-                                        aria-label="dosisantibiotika" id="dosisantibiotika" name="dosisantibiotika"
-                                        placeholder="Dosis">
-                                    <span class="input-group-text">mg</span>
-                                </div>
-                            </div>
-                        </div>
-                        <h4 style="padding-bottom: 20px; padding-top: 30px;">Glukokortikoide:</h4>
-                        <div class="row mb-1">
-                            <div class="col-sm-3">
-                                <input type="date" class="form-control  form-control-sm"
-                                    aria-label="Datum der Medikation" id="dateanfangglukokortikoide"
-                                    name="dateanfangglukokortikoide">
-                            </div>
-                            <div class="col-sm-3">
-                                <input type="date" class="form-control  form-control-sm"
-                                    aria-label="Datum der Medikation" id="dateendeglukokortikoide"
-                                    name="dateendeglukokortikoide">
-                            </div>
-                            <div class="col-sm-3">
-                                <input class="form-control-sm form-control" list="listglukokortikoide"
-                                    id="datalistglukokortikoide" placeholder="Wirkstoff">
-                                <datalist id="listglukokortikoide">
-                                    <option id="Dexamethason">Dexamethason</option>
-                                    <option id="Hydrocortison">Hydrocortison</option>
-                                    <option id="Prednisolon">Prednisolon</option>
-                                </datalist>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="input-group input-group-sm mb-1" id="dosisglukokortikoidegroup">
-                                    <input type="number" class="form-control form-control-sm"
-                                        aria-label="dosisglukokortikoide" id="dosisglukokortikoide"
-                                        name="dosisglukokortikoide" placeholder="Dosis">
-                                    <span class="input-group-text">mg</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <input type="reset" class="btn btn-primary" value="Zurücksetzen">
-                        <button type="button" class="btn btn-primary">Speichern</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </form>
-    <script src="/js/jquery-3.6.0.min.js"></script>
-    <script src="/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/form-validation.js"></script>
+                           
 </body>
 
 </html>

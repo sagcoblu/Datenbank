@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Neuro Onko</title>
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
     <link href="/css/main.css" rel="stylesheet">
+    <script src="/js/form-validation.js"></script>
 </head>
 
 <body>
@@ -21,98 +24,109 @@
                     <h5 class="modal-title" id="modalmedikationLabel">Medikation anlegen:</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-
+                <div class="modal-body" id="medikationmodalbody">
                     <div class="row mb-1">
                         <div class="col-sm-3">
-                            <input type="checkbox" name="medikationantiepileptika" id="medikationantiepileptika">
-                            <label for="medikationantiepileptika">Antiepileptika</label>
+                            <p>Anfang:</p>
                         </div>
-                        <div class="col-sm-9">
-                            <select id="antiepileptika" class=" form-select form-select-sm">
-                                <option id='Brivaracetam'>Brivaracetam</option>
-                                <option id='Diazepam'>Diazepam</option>
-                                <option id='Lacosamid'>Lacosamid</option>
-                                <option id='Lamotrigin'>Lamotrigin</option>
-                                <option id='Levetiracetam'>Levetiracetam</option>
-                                <option id='Phenytoin'>Phenytoin</option>
-                                <option id='Valproinsäure'>Valproinsäure</option>
-                            </select>
+                        <div class="col-sm-3">
+                            <p> Ende:</p>
+                        </div>
+                        <div class="col-sm-3">
+                            <p>Wirkstoff:</p>
+                        </div>
+                        <div class="col-sm-3">
+                            <p>Dosis:</p>
                         </div>
                     </div>
-                        <div class="row mb-1">
-                            <div class="col-sm-3">
-                                <input type="checkbox" name="medikationantikoagulatien" id="medikationantikoagulatien">
-                                <label for="medikationantikoagulatien">Antikoagulatien</label>
-                            </div>
-                            <div class="col-sm-9">
-                                <select id="antikoagulatien" class="form-select form-select-sm">
-                                    <option id='Acetylsalicylsäure + Atorvastatin + Ramipril'>Acetylsalicylsäure + Atorvastatin + Ramipril</option>
-                                    <option id='Apixaban'>Apixaban</option>
-                                    <option id='Enoxaparin'>Enoxaparin</option>
-                                    <option id='Heparin (natürliches)'>Heparin (natürliches)</option>
-                                    <option id='Phenprocoumon'>Phenprocoumon</option>
-                                    <option id='Rivaroxaban'>Rivaroxaban</option>
-                                    <option id='Tinzaparin'>Tinzaparin</option>
-                                </select>
-                            </div>
+                    <div class="row mb-1 newrowmedikation" id="rowmedikationmodalbody">
+                        <div class="col-sm-3">
+                            <input type="date" class="form-control" aria-label="Datum der Medikation"
+                                id="dateanfangmedikation0" name="dateanfangmedikation0" onchange="addnewinput()">
                         </div>
-
-                        <div class="row mb-1">
-                            <div class="col-sm-3">
-                                <input type="checkbox" name="medikationthrombozytenaggregationshemmer"
-                                    id="medikationthrombozytenaggregationshemmer">
-                                <label for="medikationthrombozytenaggregationshemmer" style="vertical-align: top;">Trombozyten-<br>aggregationshemmer</label>
-                            </div>
-                            <div class="col-sm-9">
-                                <select id="thrombozytenaggregationshemmer" class="form-select form-select-sm">
-                                    <option id='Acetylsalicylsäure'>Acetylsalicylsäure</option>
-                                    <option id='Clopidogrel'>Clopidogrel</option>
-                                    <option id='Prasugrel'>Prasugrel</option>
-                                    <option id='Ticagrelor'>Ticagrelor</option>
-                                </select>
-                            </div>
+                        <div class="col-sm-3">
+                            <input type="date" class="form-control" aria-label="Datum der Medikation"
+                                id="dateendemedikation0" name="dateendemedikation0">
                         </div>
-                        <div class="row mb-1">
-                            <div class="col-sm-3">
-                                <input type="checkbox" name="medikationantibiotika" id="medikationantibiotika">
-                                <label for="medikationantibiotika">Antibiotika</label>
-                            </div>                           
-                            <div class="col-sm-9">                              
-                                <select id="antibiotika" class="form-select form-select-sm">
-                                    <option id='Amoxicillin'>Amoxicillin</option>
-                                    <option id='Amoxicillin + Clavulansäure'>Amoxicillin + Clavulansäure</option>
-                                    <option id='Ampicillin'>Ampicillin</option>
-                                    <option id='Ampicillin + Sulbactam'>Ampicillin + Sulbactam</option>
-                                    <option id='Cefotaxim'>Cefotaxim</option>
-                                    <option id='Ceftriaxon'>Ceftriaxon</option>
-                                    <option id='Cefuroxim'>Cefuroxim</option>
-                                    <option id='Ciprofloxacin (zur Einnahme oder Infusion)'>Ciprofloxacin (zur Einnahme
+                        <div class="col-sm-3">
+                            <input class="form-control" list="listmedikation" id="datalistmedikation0"
+                                name="datalistmedikation0" onchange="addnewinput()">
+                            <datalist id="listmedikation">
+                                <optgroup id="Antiepileptika" label="Antiepileptika">
+                                    <option id="Brivaracetam">Brivaracetam</option>
+                                    <option id="Diazepam">Diazepam</option>
+                                    <option id="Lacosamid">Lacosamid</option>
+                                    <option id="Lamotrigin">Lamotrigin</option>
+                                    <option id="Levetiracetam">Levetiracetam</option>
+                                    <option id="Phenytoin">Phenytoin</option>
+                                    <option id="Valproinsäure">Valproinsäure</option>
+                                </optgroup>
+                                <optgroup id="Antikoagulatien" label="Antikoagulatien">
+                                    <option id="Acetylsalicylsäure + Atorvastatin + Ramipril">Acetylsalicylsäure +
+                                        Atorvastatin
+                                        + Ramipril</option>
+                                    <option id="Apixaban">Apixaban</option>
+                                    <option id="Enoxaparin">Enoxaparin</option>
+                                    <option id="Heparin (natürliches)">Heparin (natürliches)</option>
+                                    <option id="Phenprocoumon">Phenprocoumon</option>
+                                    <option id="Rivaroxaban">Rivaroxaban</option>
+                                    <option id="Tinzaparin">Tinzaparin</option>
+                                </optgroup>
+                                <optgroup id="Thrombozytenaggregationshemmer" label="Thrombozytenaggregationshemmer">
+                                    <option id="Acetylsalicylsäure">Acetylsalicylsäure</option>
+                                    <option id="Clopidogrel">Clopidogrel</option>
+                                    <option id="Prasugrel">Prasugrel</option>
+                                    <option id="Ticagrelor">Ticagrelor</option>
+                                </optgroup>
+                                <optgroup id="Antibiotika" label="Antibiotika">
+                                    <option id="Amoxicillin">Amoxicillin</option>
+                                    <option id="Amoxicillin + Clavulansäure">Amoxicillin + Clavulansäure</option>
+                                    <option id="Ampicillin">Ampicillin</option>
+                                    <option id="Ampicillin + Sulbactam">Ampicillin + Sulbactam</option>
+                                    <option id="Cefotaxim">Cefotaxim</option>
+                                    <option id="Ceftriaxon">Ceftriaxon</option>
+                                    <option id="Cefuroxim">Cefuroxim</option>
+                                    <option id="Ciprofloxacin (zur Einnahme oder Infusion)">Ciprofloxacin (zur Einnahme
                                         oder Infusion)</option>
-                                    <option id='Clindamycin'>Clindamycin</option>
-                                    <option id='Flucloxacillin'>Flucloxacillin</option>
-                                    <option id='Levofloxacin'>Levofloxacin</option>
-                                    <option id='Linezolid'>Linezolid</option>
-                                    <option id='Metronidazol'>Metronidazol</option>
-                                    <option id='Ofloxacin'>Ofloxacin</option>
-                                    <option id='Piperacillin + Tazobactam'>Piperacillin + Tazobactam</option>
-                                    <option id='Pivmecillinam'>Pivmecillinam</option>
-                                    <option id='Rifampicin'>Rifampicin</option>
-                                    <option id='Vancomycin'>Vancomycin</option>
-                                </select>
-                            </div>                          
+                                    <option id="Clindamycin">Clindamycin</option>
+                                    <option id="Flucloxacillin">Flucloxacillin</option>
+                                    <option id="Levofloxacin">Levofloxacin</option>
+                                    <option id="Linezolid">Linezolid</option>
+                                    <option id="Metronidazol">Metronidazol</option>
+                                    <option id="Ofloxacin">Ofloxacin</option>
+                                    <option id="Piperacillin + Tazobactam">Piperacillin + Tazobactam</option>
+                                    <option id="Pivmecillinam">Pivmecillinam</option>
+                                    <option id="Rifampicin">Rifampicin</option>
+                                    <option id="Vancomycin">Vancomycin</option>
+                                </optgroup>
+                                <optgroup id="Glukokortikoide" label="Glukokortikoide">
+                                    <option id="Dexamethason">Dexamethason</option>
+                                    <option id="Hydrocortison">Hydrocortison</option>
+                                    <option id="Prednisolon">Prednisolon</option>
+                                </optgroup>
+                            </datalist>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="input-group mb-1" id="dosismedikationgroup">
+                                <input type="number" class="form-control " aria-label="dosismedikation"
+                                    id="dosismedikation0" name="dosismedikation0" placeholder="Dosis"
+                                    onchange="addnewinput()">
+                                <span class="input-group-text">mg</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <input type="reset" class="btn btn-primary" value="Zurücksetzen">
-                        <button type="button" class="btn btn-primary">Speichern</button>
-                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="reset" class="btn btn-primary" value="Zurücksetzen">
+                    <button type="button" class="btn btn-primary">Speichern</button>
                 </div>
             </div>
         </div>
-        <script src="/js/jquery-3.6.0.min.js"></script>
-        <script src="/js/bootstrap.bundle.min.js"></script>
-        <script src="/js/form-validation.js"></script>
+    </div>
+    <script src="\js\addnewinput.js" >
+
+    </script>
 </body>
+
 
 </html>
